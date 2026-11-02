@@ -6,7 +6,7 @@ import { useRouter } from "next/navigation";
 export default function TournamentDetailClient({
   tournament,
   isLoggedIn,
-  isRegistered,          // 👈 renamed from isPaid
+  isRegistered,
   registrationId,
 }) {
   const router = useRouter();
@@ -21,7 +21,6 @@ export default function TournamentDetailClient({
   const previousRoomIdRef = useRef(null);
   const intervalRef = useRef(null);
 
-  // ── Fetch room data ────────────────────────────────────
   async function fetchRoom({ silent = false } = {}) {
     if (!silent) setRoomLoading(true);
     try {
@@ -42,20 +41,18 @@ export default function TournamentDetailClient({
       previousRoomIdRef.current = data.roomId || "";
       setRoom(data);
     } catch {
-      /* silent fail */
+      /* silent */
     } finally {
       if (!silent) setRoomLoading(false);
     }
   }
 
-  // ── Fetch on mount if registered ───────────────────────
   useEffect(() => {
     if (!isRegistered) return;
     fetchRoom();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isRegistered]);
 
-  // ── Auto-refresh while room not yet published ──────────
   useEffect(() => {
     if (!isRegistered) return;
     if (room?.roomId) return;
@@ -70,7 +67,6 @@ export default function TournamentDetailClient({
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isRegistered, room?.roomId]);
 
-  // ── Register (free — no payment step) ──────────────────
   async function handleRegister(e) {
     e.preventDefault();
     setError("");
@@ -90,8 +86,7 @@ export default function TournamentDetailClient({
         return;
       }
 
-      // ✅ No payment — reload to unlock room immediately
-      window.location.href = `/tournaments/${tournament.id}`;
+      window.location.href = `/tournaments/${tournament.id}#register`;
     } catch {
       setError("Something went wrong");
       setLoading(false);
@@ -104,7 +99,6 @@ export default function TournamentDetailClient({
     setTimeout(() => setCopied(""), 1500);
   }
 
-  // ── Determine room state ───────────────────────────────
   const isCancelled = tournament.status === "Cancelled";
   const isCompleted = tournament.status === "Completed";
   const matchStarted =
@@ -113,11 +107,8 @@ export default function TournamentDetailClient({
 
   return (
     <>
-      {/* ...header and stats section — unchanged, rendered by parent... */}
-
       {error && <div className="auth-error">{error}</div>}
 
-      {/* ── NOT LOGGED IN ──────────────────────────────── */}
       {!isLoggedIn && (
         <div className="detail-card">
           <h2>Login Required</h2>
@@ -128,7 +119,6 @@ export default function TournamentDetailClient({
         </div>
       )}
 
-      {/* ── LOGGED IN, NOT REGISTERED — show form ──────── */}
       {isLoggedIn && !isRegistered && (
         <div className="detail-card">
           <h2>Register for this Tournament</h2>
@@ -166,7 +156,6 @@ export default function TournamentDetailClient({
         </div>
       )}
 
-      {/* ── REGISTERED: ROOM CARD ──────────────────────── */}
       {isRegistered && (
         <div
           className={`detail-card room-unlocked ${

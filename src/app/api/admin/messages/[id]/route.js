@@ -38,4 +38,4 @@ export async function DELETE(req, { params }) {
   await dbConnect();
   await ContactMessage.findByIdAndDelete(id);
   return Response.json({ success: true });
-}s
+}

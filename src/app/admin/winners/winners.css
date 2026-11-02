@@ -1,0 +1,117 @@
+.admin-winners-list {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+  
+  .winner-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 20px;
+  }
+  
+  .winner-card-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 16px;
+    flex-wrap: wrap;
+    margin-bottom: 16px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid var(--border);
+  }
+  
+  .winner-card-head h3 {
+    font-family: "Barlow Condensed", sans-serif;
+    font-size: 20px;
+    font-weight: 900;
+    margin-bottom: 4px;
+  }
+  
+  .winner-card-head small {
+    color: var(--muted);
+    font-size: 12px;
+  }
+  
+  .winner-card-head small strong {
+    color: var(--green);
+  }
+  
+  .winner-actions {
+    display: flex;
+    gap: 8px;
+  }
+  
+  .winner-pay-btn {
+    padding: 8px 16px;
+    font-size: 11px;
+    font-weight: 800;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: inherit;
+    border: 1px solid rgba(255, 200, 50, 0.4);
+    background: rgba(255, 200, 50, 0.08);
+    color: #ffc832;
+    transition: 0.2s;
+  }
+  
+  .winner-pay-btn:hover {
+    background: rgba(255, 200, 50, 0.15);
+  }
+  
+  .winner-pay-btn.paid {
+    border-color: rgba(181, 255, 54, 0.4);
+    background: rgba(181, 255, 54, 0.1);
+    color: var(--green);
+  }
+  
+  .winner-details-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+  }
+  
+  .winner-details-grid > div {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+  
+  .winner-details-grid small {
+    color: var(--muted);
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-weight: 700;
+  }
+  
+  .winner-details-grid strong {
+    font-size: 12px;
+    color: var(--text);
+    font-weight: 600;
+  }
+  
+  .winner-paid-note {
+    margin-top: 14px;
+    padding: 10px 12px;
+    background: rgba(181, 255, 54, 0.06);
+    border: 1px solid rgba(181, 255, 54, 0.2);
+    border-radius: 5px;
+    color: var(--green);
+    font-size: 11px;
+    font-weight: 600;
+  }
+  
+  @media (max-width: 700px) {
+    .winner-details-grid {
+      grid-template-columns: 1fr;
+    }
+    .winner-card-head {
+      flex-direction: column;
+      align-items: stretch;
+    }
+    .winner-actions {
+      flex-wrap: wrap;
+    }
+  }

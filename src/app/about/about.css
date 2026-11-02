@@ -1,0 +1,646 @@
+/* ============================================================
+   ABOUT PAGE
+   ============================================================ */
+
+   .about-page {
+    background: #080a0b;
+  }
+  
+  .about-container {
+    max-width: 1100px;
+    margin: auto;
+    padding: 0 25px;
+  }
+  
+  /* ─── HERO ──────────────────────────────────────────────── */
+  
+  .about-hero {
+    position: relative;
+    padding: 100px 0 80px;
+    overflow: hidden;
+    background: #0b1010;
+  }
+  
+  .about-hero-bg {
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(
+        ellipse at 30% 40%,
+        rgba(181, 255, 54, 0.08),
+        transparent 55%
+      ),
+      radial-gradient(
+        ellipse at 80% 80%,
+        rgba(181, 255, 54, 0.05),
+        transparent 50%
+      );
+  }
+  
+  .about-hero .about-container {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+  }
+  
+  .about-hero h1 {
+    font-family: "Barlow Condensed", sans-serif;
+    font-size: clamp(42px, 7vw, 72px);
+    font-weight: 900;
+    line-height: 0.95;
+    letter-spacing: -1px;
+    margin: 16px 0 24px;
+  }
+  
+  .about-hero h1 span {
+    color: var(--green);
+  }
+  
+  .about-hero p {
+    max-width: 680px;
+    margin: 0 auto;
+    color: #a3aaa5;
+    font-size: 14px;
+    line-height: 1.9;
+  }
+  
+  .about-hero-actions {
+    display: flex;
+    gap: 12px;
+    margin-top: 36px;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  
+  /* ─── STATS ─────────────────────────────────────────────── */
+  
+  .about-stats-section {
+    padding: 60px 0;
+    background: #080a0b;
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+  }
+  
+  .about-stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 14px;
+  }
+  
+  .about-stat-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 24px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    text-align: center;
+    transition: 0.2s;
+  }
+  
+  .about-stat-card:hover {
+    border-color: rgba(181, 255, 54, 0.3);
+  }
+  
+  .about-stat-card.highlight {
+    background:
+      radial-gradient(
+        ellipse at top,
+        rgba(181, 255, 54, 0.1),
+        transparent 60%
+      ),
+      var(--surface);
+    border-color: rgba(181, 255, 54, 0.35);
+  }
+  
+  .about-stat-card strong {
+    font-family: "Barlow Condensed", sans-serif;
+    font-size: 34px;
+    font-weight: 900;
+    color: var(--green);
+    line-height: 1;
+  }
+  
+  .about-stat-card small {
+    font-size: 10px;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 700;
+  }
+  
+  /* ─── SECTIONS ──────────────────────────────────────────── */
+  
+  .about-section {
+    padding: 90px 0;
+  }
+  
+  .about-values-section {
+    background: #0b0e0e;
+  }
+  
+  .about-how-section {
+    background: #080a0b;
+  }
+  
+  .about-payout-section {
+    background: #0b0e0e;
+  }
+  
+  /* ─── TWO-COL MISSION ───────────────────────────────────── */
+  
+  .about-two-col {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 60px;
+    align-items: start;
+  }
+  
+  .about-two-col h2 {
+    font-family: "Barlow Condensed", sans-serif;
+    font-size: clamp(32px, 5vw, 52px);
+    font-weight: 900;
+    line-height: 1;
+    letter-spacing: -0.5px;
+    margin-top: 14px;
+  }
+  
+  .about-two-col h2 span {
+    color: var(--green);
+  }
+  
+  .about-mission-text {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+  }
+  
+  .about-mission-text p {
+    color: #a3aaa5;
+    font-size: 14px;
+    line-height: 1.9;
+  }
+  
+  .about-mission-text strong {
+    color: var(--text);
+    font-weight: 700;
+  }
+  
+  /* ─── CENTER HEADINGS ───────────────────────────────────── */
+  
+  .about-center-heading {
+    text-align: center;
+    margin-bottom: 50px;
+  }
+  
+  .about-center-heading h2 {
+    font-family: "Barlow Condensed", sans-serif;
+    font-size: clamp(32px, 5vw, 48px);
+    font-weight: 900;
+    line-height: 1;
+    margin-top: 12px;
+    letter-spacing: -0.5px;
+  }
+  
+  .about-center-heading h2 span {
+    color: var(--green);
+  }
+  
+  .about-center-heading p {
+    color: var(--muted);
+    font-size: 13px;
+    line-height: 1.7;
+    margin-top: 14px;
+    max-width: 560px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  /* ─── VALUES ────────────────────────────────────────────── */
+  
+  .about-values-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px;
+  }
+  
+  .about-value-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 28px 24px;
+    transition: 0.2s;
+  }
+  
+  .about-value-card:hover {
+    border-color: rgba(181, 255, 54, 0.3);
+    transform: translateY(-3px);
+  }
+  
+  .about-value-icon {
+    font-size: 30px;
+    display: block;
+    margin-bottom: 16px;
+  }
+  
+  .about-value-card h3 {
+    font-size: 16px;
+    font-weight: 800;
+    margin-bottom: 10px;
+    color: var(--text);
+  }
+  
+  .about-value-card p {
+    color: var(--muted);
+    font-size: 12px;
+    line-height: 1.8;
+  }
+  
+  /* ─── HOW IT WORKS ──────────────────────────────────────── */
+  
+  .about-steps-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    max-width: 760px;
+    margin: 0 auto;
+  }
+  
+  .about-step-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 24px 26px;
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    position: relative;
+    transition: 0.2s;
+  }
+  
+  .about-step-card:hover {
+    border-color: rgba(181, 255, 54, 0.3);
+  }
+  
+  .about-step-number {
+    font-family: "Barlow Condensed", sans-serif;
+    font-size: 40px;
+    font-weight: 900;
+    color: rgba(181, 255, 54, 0.3);
+    line-height: 1;
+    flex-shrink: 0;
+    min-width: 52px;
+  }
+  
+  .about-step-content {
+    flex: 1;
+    min-width: 0;
+  }
+  
+  .about-step-content h3 {
+    font-size: 16px;
+    font-weight: 800;
+    margin-bottom: 8px;
+    color: var(--text);
+  }
+  
+  .about-step-content p {
+    color: var(--muted);
+    font-size: 12px;
+    line-height: 1.7;
+  }
+  
+  .about-step-connector {
+    position: absolute;
+    bottom: -15px;
+    left: 42px;
+    color: rgba(181, 255, 54, 0.2);
+    font-size: 14px;
+    z-index: 1;
+  }
+  
+  /* ─── PAYOUT SECTION ────────────────────────────────────── */
+  
+  .about-payout-card {
+    display: grid;
+    grid-template-columns: 1.1fr 1fr;
+    gap: 50px;
+    align-items: center;
+    background:
+      radial-gradient(
+        ellipse at top left,
+        rgba(181, 255, 54, 0.06),
+        transparent 55%
+      ),
+      var(--surface);
+    border: 1px solid rgba(181, 255, 54, 0.15);
+    border-radius: 12px;
+    padding: 48px;
+  }
+  
+  .about-payout-content h2 {
+    font-family: "Barlow Condensed", sans-serif;
+    font-size: clamp(28px, 4vw, 40px);
+    font-weight: 900;
+    line-height: 1.05;
+    margin: 12px 0 20px;
+    letter-spacing: -0.5px;
+  }
+  
+  .about-payout-content h2 span {
+    color: var(--green);
+  }
+  
+  .about-payout-content p {
+    color: #a3aaa5;
+    font-size: 13px;
+    line-height: 1.8;
+    margin-bottom: 24px;
+  }
+  
+  .about-payout-points {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 0;
+  }
+  
+  .about-payout-points li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 13px;
+    color: var(--text);
+  }
+  
+  .about-payout-points li span {
+    color: var(--green);
+    font-weight: 900;
+    font-size: 14px;
+  }
+  
+  /* Receipt visual */
+  
+  .about-payout-visual {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .about-payout-receipt {
+    width: 100%;
+    max-width: 320px;
+    background: #0b0f0e;
+    border: 1px solid rgba(181, 255, 54, 0.2);
+    border-radius: 10px;
+    padding: 22px;
+    box-shadow: 0 20px 45px rgba(0, 0, 0, 0.4);
+    transform: rotate(-2deg);
+    transition: transform 0.3s;
+  }
+  
+  .about-payout-receipt:hover {
+    transform: rotate(0deg);
+  }
+  
+  .receipt-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 14px;
+    border-bottom: 1px dashed rgba(255, 255, 255, 0.1);
+    margin-bottom: 16px;
+  }
+  
+  .receipt-header span:first-child {
+    font-family: "Barlow Condensed", sans-serif;
+    font-size: 11px;
+    font-weight: 900;
+    letter-spacing: 2px;
+    color: var(--muted);
+  }
+  
+  .receipt-status {
+    font-size: 9px;
+    font-weight: 800;
+    padding: 4px 10px;
+    border-radius: 3px;
+    background: rgba(181, 255, 54, 0.15);
+    color: var(--green);
+    letter-spacing: 0.5px;
+  }
+  
+  .receipt-amount {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    padding-bottom: 16px;
+    border-bottom: 1px dashed rgba(255, 255, 255, 0.1);
+    margin-bottom: 16px;
+  }
+  
+  .receipt-amount small {
+    font-size: 9px;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 700;
+  }
+  
+  .receipt-amount strong {
+    font-family: "Barlow Condensed", sans-serif;
+    font-size: 36px;
+    font-weight: 900;
+    color: var(--green);
+    line-height: 1;
+  }
+  
+  .receipt-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 7px 0;
+    font-size: 11px;
+  }
+  
+  .receipt-row span {
+    color: var(--muted);
+  }
+  
+  .receipt-row strong {
+    color: var(--text);
+    font-weight: 700;
+  }
+  
+  .receipt-mono {
+    font-family: ui-monospace, "SF Mono", Menlo, monospace;
+    font-size: 10px !important;
+    letter-spacing: 0.3px;
+  }
+  
+  .receipt-footer {
+    margin-top: 16px;
+    padding-top: 14px;
+    border-top: 1px dashed rgba(255, 255, 255, 0.1);
+    font-size: 10px;
+    color: var(--muted);
+    text-align: center;
+    font-style: italic;
+  }
+  
+  /* ─── CTA ───────────────────────────────────────────────── */
+  
+  .about-cta-section {
+    padding: 90px 25px;
+    text-align: center;
+    background:
+      radial-gradient(
+        ellipse at center,
+        rgba(181, 255, 54, 0.08),
+        transparent 65%
+      ),
+      #101512;
+    border-top: 1px solid var(--border);
+  }
+  
+  .about-cta-section h2 {
+    font-family: "Barlow Condensed", sans-serif;
+    font-size: clamp(36px, 5.5vw, 60px);
+    font-weight: 900;
+    line-height: 1;
+    letter-spacing: -0.5px;
+    margin: 14px 0 20px;
+  }
+  
+  .about-cta-section h2 span {
+    color: var(--green);
+  }
+  
+  .about-cta-section p {
+    color: var(--muted);
+    font-size: 13px;
+    line-height: 1.8;
+    max-width: 500px;
+    margin: 0 auto;
+  }
+  
+  .about-cta-actions {
+    display: flex;
+    gap: 12px;
+    margin-top: 30px;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  
+  /* ─── RESPONSIVE ────────────────────────────────────────── */
+  
+  @media (max-width: 900px) {
+    .about-two-col {
+      grid-template-columns: 1fr;
+      gap: 32px;
+    }
+  
+    .about-payout-card {
+      grid-template-columns: 1fr;
+      gap: 40px;
+      padding: 36px;
+    }
+  
+    .about-payout-visual {
+      order: -1;
+    }
+  
+    .about-payout-receipt {
+      transform: rotate(0deg);
+    }
+  }
+  
+  @media (max-width: 700px) {
+    .about-container {
+      padding: 0 17px;
+    }
+  
+    .about-hero {
+      padding: 70px 0 60px;
+    }
+  
+    .about-hero h1 {
+      font-size: clamp(38px, 9vw, 54px);
+    }
+  
+    .about-hero p {
+      font-size: 13px;
+    }
+  
+    .about-stats-section {
+      padding: 40px 0;
+    }
+  
+    .about-stats-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  
+    .about-stat-card {
+      padding: 18px 14px;
+    }
+  
+    .about-stat-card strong {
+      font-size: 26px;
+    }
+  
+    .about-section {
+      padding: 60px 0;
+    }
+  
+    .about-values-grid {
+      grid-template-columns: 1fr;
+    }
+  
+    .about-value-card {
+      padding: 22px 20px;
+    }
+  
+    .about-step-card {
+      padding: 20px 18px;
+      gap: 14px;
+    }
+  
+    .about-step-number {
+      font-size: 32px;
+      min-width: 42px;
+    }
+  
+    .about-step-connector {
+      left: 32px;
+    }
+  
+    .about-payout-card {
+      padding: 26px 22px;
+    }
+  
+    .about-cta-section {
+      padding: 70px 20px;
+    }
+  }
+  
+  @media (max-width: 400px) {
+    .about-hero-actions {
+      flex-direction: column;
+      width: 100%;
+    }
+  
+    .about-hero-actions a {
+      width: 100%;
+      justify-content: center;
+    }
+  
+    .about-cta-actions {
+      flex-direction: column;
+    }
+  
+    .about-cta-actions a {
+      width: 100%;
+      justify-content: center;
+    }
+  }

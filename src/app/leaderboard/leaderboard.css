@@ -1,0 +1,500 @@
+/* ============================================================
+   LEADERBOARD PAGE
+   ============================================================ */
+
+   .leaderboard-page {
+    background: #080a0b;
+    min-height: calc(100vh - 82px);
+    padding: 60px 20px 100px;
+  }
+  
+  .leaderboard-container {
+    max-width: 1000px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+  }
+  
+  /* ─── HEADER ──────────────────────────────────────────────── */
+  
+  .leaderboard-header {
+    text-align: center;
+    margin-bottom: 8px;
+  }
+  
+  .leaderboard-header h1 {
+    font-family: "Barlow Condensed", sans-serif;
+    font-size: clamp(42px, 7vw, 68px);
+    font-weight: 900;
+    line-height: 0.95;
+    margin: 12px 0;
+    letter-spacing: -1px;
+  }
+  
+  .leaderboard-header h1 span {
+    color: var(--green);
+  }
+  
+  .leaderboard-header p {
+    color: var(--muted);
+    font-size: 13px;
+    line-height: 1.7;
+    margin-top: 12px;
+  }
+  
+  /* ─── EMPTY STATE ─────────────────────────────────────────── */
+  
+  .leaderboard-empty {
+    text-align: center;
+    padding: 80px 20px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+  }
+  
+  .leaderboard-empty p {
+    color: var(--muted);
+    font-size: 14px;
+    margin-bottom: 24px;
+  }
+  
+  /* ============================================================
+     PODIUM — TOP 3 (COMPACT HORIZONTAL CARDS)
+     ============================================================ */
+  
+  .leaderboard-podium {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .podium-card {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 14px 18px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-right: 3px solid var(--border);
+    border-radius: 10px;
+    transition: border-color 0.2s ease, transform 0.15s ease;
+  }
+  
+  .podium-card:hover {
+    border-color: rgba(181, 255, 54, 0.3);
+    transform: translateX(2px);
+  }
+  
+  /* Rank-specific accents */
+  
+  .podium-rank-1 {
+    padding: 18px 20px;
+    border-color: rgba(255, 200, 50, 0.35);
+    border-left-color: rgba(255, 200, 50, 0.6);
+    background:
+      linear-gradient(
+        90deg,
+        rgba(255, 200, 50, 0.06),
+        transparent 55%
+      ),
+      var(--surface);
+  }
+  
+  .podium-rank-2 {
+    border-left-color: rgba(192, 200, 208, 0.4);
+  }
+  
+  .podium-rank-3 {
+    border-left-color: rgba(205, 127, 50, 0.4);
+  }
+  
+  /* ─── MEDAL ──────────────────────────────────────────────── */
+  
+  .podium-medal {
+    font-size: 30px;
+    line-height: 1;
+    flex-shrink: 0;
+    width: 40px;
+    text-align: center;
+  }
+  
+  .podium-rank-1 .podium-medal {
+    font-size: 38px;
+    filter: drop-shadow(0 3px 10px rgba(255, 200, 50, 0.4));
+  }
+  
+  /* ─── AVATAR ─────────────────────────────────────────────── */
+  
+  .podium-avatar {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: var(--green);
+    color: #10140a;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: "Barlow Condensed", sans-serif;
+    font-size: 16px;
+    font-weight: 900;
+    flex-shrink: 0;
+    border: 2px solid rgba(255, 255, 255, 0.08);
+  }
+  
+  .podium-rank-1 .podium-avatar {
+    width: 52px;
+    height: 52px;
+    font-size: 20px;
+    background: linear-gradient(135deg, #ffd84d, #ffb800);
+    border-color: rgba(255, 200, 50, 0.4);
+  }
+  
+  /* ─── INFO COLUMN ────────────────────────────────────────── */
+  
+  .podium-info {
+    flex: 1;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+  
+  .podium-name {
+    font-family: "Barlow Condensed", sans-serif;
+    font-size: 18px;
+    font-weight: 900;
+    color: var(--text);
+    letter-spacing: 0.2px;
+    line-height: 1.15;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  
+  .podium-rank-1 .podium-name {
+    font-size: 22px;
+    color: #ffe17a;
+  }
+  
+  .podium-ign {
+    color: var(--green);
+    font-size: 11px;
+    font-weight: 700;
+    line-height: 1;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  
+  .podium-meta {
+    color: var(--muted);
+    font-size: 11px;
+    font-weight: 600;
+    margin-top: 3px;
+    line-height: 1;
+  }
+  
+  .podium-rank-1 .podium-meta {
+    color: #e0b94a;
+  }
+  
+  /* ============================================================
+     TABLE — REST OF RANKS
+     ============================================================ */
+  
+  .leaderboard-table-wrap {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    overflow: hidden;
+  }
+  
+  .leaderboard-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .leaderboard-table th,
+  .leaderboard-table td {
+    padding: 14px 18px;
+    text-align: left;
+    font-size: 13px;
+    border-bottom: 1px solid var(--border);
+    vertical-align: middle;
+  }
+  
+  .leaderboard-table th {
+    background: #0b0f0e;
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--muted);
+    white-space: nowrap;
+  }
+  
+  .leaderboard-table td {
+    color: #c8d0cb;
+  }
+  
+  .leaderboard-table tr:last-child td {
+    border-bottom: none;
+  }
+  
+  .leaderboard-table tbody tr:hover {
+    background: rgba(181, 255, 54, 0.03);
+  }
+  
+  .lb-rank {
+    font-family: "Barlow Condensed", sans-serif;
+    font-weight: 900;
+    font-size: 16px;
+    color: var(--muted);
+    width: 80px;
+  }
+  
+  .lb-player {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    min-width: 0;
+  }
+  
+  .lb-avatar {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: var(--green);
+    color: #10140a;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: "Barlow Condensed", sans-serif;
+    font-size: 13px;
+    font-weight: 900;
+    flex-shrink: 0;
+  }
+  
+  .lb-player > div:last-child {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    min-width: 0;
+  }
+  
+  .lb-player strong {
+    color: var(--text);
+    font-size: 13px;
+    font-weight: 700;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  
+  .lb-player small {
+    color: var(--green);
+    font-size: 10px;
+    font-weight: 600;
+  }
+  
+  .lb-earnings {
+    color: var(--green);
+    font-weight: 800;
+    font-family: "Barlow Condensed", sans-serif;
+    font-size: 15px;
+    white-space: nowrap;
+  }
+  
+  /* ============================================================
+     SUMMARY STRIP
+     ============================================================ */
+  
+  .leaderboard-summary {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 14px;
+  }
+  
+  .leaderboard-summary > div {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    text-align: center;
+  }
+  
+  .leaderboard-summary small {
+    font-size: 10px;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 700;
+  }
+  
+  .leaderboard-summary strong {
+    font-family: "Barlow Condensed", sans-serif;
+    font-size: 28px;
+    font-weight: 900;
+    color: var(--green);
+    line-height: 1;
+  }
+  
+  /* ============================================================
+     RESPONSIVE — TABLET
+     ============================================================ */
+  
+  @media (max-width: 900px) {
+    .leaderboard-container {
+      gap: 26px;
+    }
+  }
+  
+  /* ============================================================
+     RESPONSIVE — MOBILE
+     ============================================================ */
+  
+  @media (max-width: 700px) {
+    .leaderboard-page {
+      padding: 40px 16px 80px;
+    }
+  
+    .leaderboard-container {
+      gap: 22px;
+    }
+  
+    .leaderboard-header h1 {
+      font-size: clamp(34px, 10vw, 48px);
+    }
+  
+    /* Podium: tighter but still horizontal */
+    .podium-card {
+      padding: 12px 14px;
+      gap: 10px;
+    }
+  
+    .podium-rank-1 {
+      padding: 14px 16px;
+    }
+  
+    .podium-medal {
+      font-size: 24px;
+      width: 30px;
+    }
+  
+    .podium-rank-1 .podium-medal {
+      font-size: 30px;
+    }
+  
+    .podium-avatar {
+      width: 38px;
+      height: 38px;
+      font-size: 14px;
+    }
+  
+    .podium-rank-1 .podium-avatar {
+      width: 44px;
+      height: 44px;
+      font-size: 17px;
+    }
+  
+    .podium-name {
+      font-size: 16px;
+    }
+  
+    .podium-rank-1 .podium-name {
+      font-size: 18px;
+    }
+  
+    .podium-ign {
+      font-size: 10px;
+    }
+  
+    .podium-meta {
+      font-size: 10px;
+    }
+  
+    /* Table: horizontal scroll with fixed min-width */
+    .leaderboard-table-wrap {
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+    }
+  
+    .leaderboard-table {
+      min-width: 650px;
+    }
+  
+    .leaderboard-table th,
+    .leaderboard-table td {
+      padding: 12px 14px;
+    }
+  
+    /* Summary: single column */
+    .leaderboard-summary {
+      grid-template-columns: 1fr;
+      gap: 10px;
+    }
+  
+    .leaderboard-summary > div {
+      padding: 16px;
+    }
+  
+    .leaderboard-summary strong {
+      font-size: 22px;
+    }
+  }
+  
+  /* ============================================================
+     RESPONSIVE — SMALL PHONES
+     ============================================================ */
+  
+  @media (max-width: 380px) {
+    .leaderboard-page {
+      padding: 32px 14px 60px;
+    }
+  
+    .podium-card {
+      padding: 10px 12px;
+      gap: 8px;
+    }
+  
+    .podium-rank-1 {
+      padding: 12px 14px;
+    }
+  
+    .podium-medal {
+      font-size: 20px;
+      width: 26px;
+    }
+  
+    .podium-rank-1 .podium-medal {
+      font-size: 24px;
+    }
+  
+    .podium-avatar {
+      width: 34px;
+      height: 34px;
+      font-size: 12px;
+    }
+  
+    .podium-rank-1 .podium-avatar {
+      width: 38px;
+      height: 38px;
+      font-size: 15px;
+    }
+  
+    .podium-name {
+      font-size: 15px;
+    }
+  
+    .podium-rank-1 .podium-name {
+      font-size: 16px;
+    }
+  
+    .podium-meta {
+      font-size: 9px;
+    }
+  }

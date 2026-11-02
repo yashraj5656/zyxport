@@ -3,7 +3,8 @@ import "../legal.css";
 
 export const metadata = {
   title: "Terms & Conditions — Zyxport Esports",
-  description: "The terms and conditions for using Zyxport's tournament platform.",
+  description:
+    "The terms and conditions for using Zyxport's free BGMI tournament platform.",
 };
 
 const LAST_UPDATED = "November 2, 2026";
@@ -64,7 +65,7 @@ export default function TermsPage() {
               Any activity carried out through your account is considered
               your responsibility. If you suspect unauthorized access,
               contact us immediately at{" "}
-              <a href="mailto:zqentra@gmail.com">support@zyxport.com</a>.
+              <a href="mailto:zqentra@gmail.com">zqentra@gmail.com</a>.
             </p>
             <p>
               One account per person. Creating multiple accounts to gain an
@@ -74,36 +75,29 @@ export default function TermsPage() {
           </section>
 
           <section>
-            <h2>4. Tournament Entry & Payment</h2>
+            <h2>4. Tournament Entry</h2>
             <p>
-              Tournament entry fees are paid through Razorpay and are
-              non-refundable once a slot is confirmed, except in the
-              following cases:
+              All tournaments on Zyxport are <strong>completely free to
+              enter</strong>. There are no entry fees, deposits, or hidden
+              charges of any kind. To register for a tournament, you only
+              need a valid Zyxport account and your BGMI in-game name (IGN)
+              and UID.
             </p>
-            <ul>
-              <li>The tournament is cancelled by the organizer.</li>
-              <li>
-                The tournament is postponed by more than 7 days without notice.
-              </li>
-              <li>
-                A verified technical failure on our platform prevents you
-                from participating.
-              </li>
-            </ul>
             <p>
-              Refunds, if approved, are processed back to the original payment
-              method within 5–7 business days.
+              Because there is no fee, there is nothing to refund. If you
+              register for a tournament and cannot attend, simply do not
+              join the room — your slot may be reassigned to the next player
+              on the waitlist.
             </p>
           </section>
 
           <section>
             <h2>5. Room Access & Match Rules</h2>
             <p>
-              Room ID and password are revealed only after successful payment
-              and are strictly for registered players. Sharing these
+              Room ID and password are revealed only to registered players
+              after signup and are strictly for those players. Sharing these
               credentials with anyone — including teammates not registered on
-              your team — is grounds for immediate disqualification without
-              refund.
+              your team — is grounds for immediate disqualification.
             </p>
             <p>
               Additional match rules (such as no teaming, no hacks, no
@@ -190,9 +184,11 @@ export default function TermsPage() {
               <li>Account bans imposed by Krafton independently of us.</li>
             </ul>
             <p>
-              To the maximum extent permitted by law, our liability for any
-              claim related to a tournament is limited to the entry fee you
-              paid for that tournament.
+              Because all tournaments on Zyxport are free to enter, our
+              liability for any claim related to a tournament is limited to
+              the prize amount (if any) that you were entitled to but did not
+              receive. We are not liable for indirect, incidental, or
+              consequential damages.
             </p>
           </section>
 
@@ -219,7 +215,7 @@ export default function TermsPage() {
             <h2>12. Contact</h2>
             <p>
               For questions about these terms, reach out at{" "}
-              <a href="mailto:zqentra@gmail.com">support@zyxport.com</a> or
+              <a href="mailto:zqentra@gmail.com">zqentra@gmail.com</a> or
               through our <Link href="/contact">Contact page</Link>.
             </p>
           </section>

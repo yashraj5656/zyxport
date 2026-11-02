@@ -13,7 +13,7 @@ const TournamentSchema = new mongoose.Schema(
       required: true,
       enum: ["Erangel", "Miramar", "Sanhok", "Vikendi", "Livik"],
     },
-    entry: { type: Number, required: true, min: 0 },
+    entry: { type: Number, required: true, min: 0, default: 0 },
     prize: { type: Number, required: true, min: 0 },
     slots: { type: Number, required: true, min: 1, default: 100 },
     filled: { type: Number, default: 0, min: 0 },

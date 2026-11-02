@@ -52,10 +52,9 @@ export default function PrivacyPage() {
                 avatar (optional emoji), bio (optional).
               </li>
               <li>
-                <strong>Payment info</strong> — your bank account details or
-                UPI ID, provided by you for payouts. We never see or store
-                your card details — payments are handled entirely by
-                Razorpay.
+                <strong>Payout info</strong> — your bank account details or
+                UPI ID, provided by you to receive prize money. This is only
+                collected when you win a tournament and request a payout.
               </li>
               <li>
                 <strong>Communications</strong> — messages sent through our
@@ -101,16 +100,17 @@ export default function PrivacyPage() {
           </section>
 
           <section>
-            <h2>4. Payment Processing</h2>
+            <h2>4. Tournament Entry</h2>
             <p>
-              All tournament entry payments are processed by{" "}
-              <strong>Razorpay</strong>, a PCI-DSS compliant payment gateway.
-              When you pay, your card or UPI details go directly to Razorpay —
-              Zyxport never receives or stores them.
+              All tournaments on Zyxport are <strong>free to enter</strong>.
+              We do not collect any payment information to register for a
+              tournament — you only need to provide your in-game name (IGN)
+              and BGMI UID.
             </p>
             <p>
-              We only receive a payment confirmation and a transaction ID
-              from Razorpay to verify that your payment succeeded.
+              There are no entry fees, no hidden charges, and no card or UPI
+              details required to compete. Your bank or UPI details are only
+              needed if you win a prize and want us to send you the payout.
             </p>
           </section>
 
@@ -119,12 +119,15 @@ export default function PrivacyPage() {
             <p>We share your data only in these limited cases:</p>
             <ul>
               <li>
-                <strong>With Razorpay</strong> — for payment processing.
-              </li>
-              <li>
                 <strong>With tournament organizers</strong> — only your IGN
                 and UID, so they can verify you in-game. Your email and bank
                 details are never shared with organizers.
+              </li>
+              <li>
+                <strong>With payment services</strong> — when sending prize
+                money to your bank or UPI, we use secure banking channels.
+                Your details are not shared with any third-party advertising
+                or analytics services.
               </li>
               <li>
                 <strong>With law enforcement</strong> — if required by a valid
@@ -142,6 +145,11 @@ export default function PrivacyPage() {
               httpOnly cookie that cannot be read by JavaScript.
             </p>
             <p>
+              Bank and UPI details you provide for payouts are stored
+              encrypted at rest and are only accessed by authorized
+              personnel when processing a winner's prize money.
+            </p>
+            <p>
               While we take reasonable precautions, no system is 100% secure.
               If you suspect unauthorized access, contact us immediately.
             </p>
@@ -156,7 +164,7 @@ export default function PrivacyPage() {
             </p>
             <ul>
               <li>
-                Transaction records, which we retain for 7 years for tax and
+                Payout records, which we retain for 7 years for tax and
                 accounting compliance.
               </li>
               <li>
@@ -190,7 +198,7 @@ export default function PrivacyPage() {
             </ul>
             <p>
               To exercise any of these rights, email{" "}
-              <a href="mailto:zqentra@gmail.com">support@zyxport.com</a>.
+              <a href="mailto:zqentra@gmail.com">zqentra@gmail.com</a>.
             </p>
           </section>
 
@@ -232,7 +240,7 @@ export default function PrivacyPage() {
             <h2>12. Contact</h2>
             <p>
               Questions about this privacy policy? Email us at{" "}
-              <a href="mailto:zqentra@gmail.com">support@zyxport.com</a> or
+              <a href="mailto:zqentra@gmail.com">zqentra@gmail.com</a> or
               through our <Link href="/contact">Contact page</Link>.
             </p>
           </section>

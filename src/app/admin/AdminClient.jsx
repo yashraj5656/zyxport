@@ -183,7 +183,7 @@ export default function AdminClient() {
   />
 </label>
 
-          <label>
+          {/*<label>
             Entry Fee (₹)
             <input
               type="number"
@@ -192,7 +192,7 @@ export default function AdminClient() {
               onChange={(e) => setForm({ ...form, entry: e.target.value })}
               required
             />
-          </label>
+          </label>*/}
 
           <label>
             Prize Pool (₹)

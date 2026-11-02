@@ -11,16 +11,9 @@ const contactMethods = [
   {
     icon: "📧",
     title: "Email",
-    value: "support@zyxport.com",
+    value: "zqentra@gmail.com",
     href: "mailto:zqentra@gmail.com",
-    description: "General queries, refunds, and account issues.",
-  },
-  {
-    icon: "💬",
-    title: "Discord",
-    value: "discord.gg/zyxport",
-    href: "https://instagram.com/zyxport",
-    description: "Fastest response — join our community server.",
+    description: "General queries, account issues, and prize payouts.",
   },
   {
     icon: "📱",
@@ -28,6 +21,13 @@ const contactMethods = [
     value: "@zyxport",
     href: "https://instagram.com/zyxport",
     description: "Tournament announcements and updates.",
+  },
+  {
+    icon: "🏆",
+    title: "Tournaments",
+    value: "Browse & register",
+    href: "/tournaments",
+    description: "See all free-to-enter BGMI tournaments.",
   },
 ];
 
@@ -42,8 +42,8 @@ export default function ContactPage() {
             GET IN <span>TOUCH</span>
           </h1>
           <p>
-            Questions about a tournament? Payment issue? Partnership enquiry?
-            We read every message and reply within 24 hours.
+            Questions about a tournament? Technical issue? Partnership
+            enquiry? We read every message and reply within 24 hours.
           </p>
         </header>
 
@@ -82,9 +82,9 @@ export default function ContactPage() {
             <div className="contact-response-note">
               <strong>⏱ Average Response Time</strong>
               <p>
-                Discord: <strong>~2 hours</strong>
-                <br />
                 Email: <strong>within 24 hours</strong>
+                <br />
+                Instagram DM: <strong>~6 hours</strong>
               </p>
             </div>
           </aside>

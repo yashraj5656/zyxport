@@ -12,10 +12,10 @@ const features = [
       "Explore upcoming BGMI tournaments and select the competition that suits your playstyle.",
   },
   {
-    icon: "💳",
-    title: "Secure Your Slot",
+    icon: "✍️",
+    title: "Register Free",
     description:
-      "Pay the tournament entry fee and confirm your participation.",
+      "Sign up for any tournament with your IGN and UID — no entry fee, no hidden charges.",
   },
   {
     icon: "🔑",
@@ -47,7 +47,6 @@ async function getUpcomingTournaments() {
       name: t.name,
       mode: t.mode,
       map: t.map,
-      entry: t.entry,
       prize: t.prize,
       slots: t.slots,
       filled: t.filled,
@@ -91,8 +90,8 @@ function TournamentCard({ tournament }) {
           </div>
 
           <div className="entry-price">
-            <span className="detail-label">Entry Fee</span>
-            <strong>₹{tournament.entry}</strong>
+            <span className="detail-label">Entry</span>
+            <strong className="free-entry">Free</strong>
           </div>
         </div>
 
@@ -152,9 +151,9 @@ export default async function Home() {
             </h1>
 
             <p>
-              Your skills deserve a bigger battlefield. Join competitive
-              BGMI tournaments, challenge the best players and compete for
-              real prizes.
+              Your skills deserve a bigger battlefield. Join free BGMI
+              tournaments, challenge the best players and compete for real
+              prizes — no entry fee, ever.
             </p>
 
             <div className="hero-actions">
@@ -174,7 +173,7 @@ export default async function Home() {
               </div>
               <div>
                 <strong>100%</strong>
-                <span>Skill Based</span>
+                <span>Free Entry</span>
               </div>
               <div>
                 <strong>BGMI</strong>
@@ -208,10 +207,10 @@ export default async function Home() {
             </div>
 
             <div className="floating-card floating-two">
-              <span>🔥</span>
+              <span>🎟️</span>
               <div>
-                <strong>76 / 100</strong>
-                <small>Players Joined</small>
+                <strong>Free</strong>
+                <small>Entry Fee</small>
               </div>
             </div>
           </div>
@@ -233,7 +232,7 @@ export default async function Home() {
                 UPCOMING <span>TOURNAMENTS</span>
               </h2>
               <p>
-                Pick your match, secure your slot and get ready to dominate.
+                Pick your match, register free and get ready to dominate.
               </p>
             </div>
 
@@ -270,12 +269,13 @@ export default async function Home() {
       <section className="section how-section" id="how-it-works">
         <div className="section-container">
           <div className="center-heading">
-            <span className="eyebrow">SIMPLE. FAST. COMPETITIVE.</span>
+            <span className="eyebrow">SIMPLE. FAST. FREE.</span>
             <h2>
               FOUR STEPS TO <span>THE BATTLE</span>
             </h2>
             <p>
-              Getting into your next BGMI tournament is easier than ever.
+              Getting into your next BGMI tournament is easier than ever —
+              and completely free.
             </p>
           </div>
 
@@ -302,8 +302,8 @@ export default async function Home() {
             <span>YOUR SKILLS?</span>
           </h2>
           <p>
-            Stop watching others win. Get into the battlefield and make your
-            own name.
+            Stop watching others win. Get into the battlefield for free and
+            make your own name.
           </p>
           <Link href="/signup" className="primary-button">
             Create Your Account →

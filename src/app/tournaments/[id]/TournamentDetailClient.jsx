@@ -6,7 +6,7 @@ import { useRouter } from "next/navigation";
 export default function TournamentDetailClient({
   tournament,
   isLoggedIn,
-  isPaid,
+  isRegistered,          // 👈 renamed from isPaid
   registrationId,
 }) {
   const router = useRouter();
@@ -15,7 +15,7 @@ export default function TournamentDetailClient({
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
   const [room, setRoom] = useState(null);
-  const [roomLoading, setRoomLoading] = useState(isPaid);
+  const [roomLoading, setRoomLoading] = useState(isRegistered);
   const [roomJustAppeared, setRoomJustAppeared] = useState(false);
   const [copied, setCopied] = useState("");
   const previousRoomIdRef = useRef(null);
@@ -31,7 +31,6 @@ export default function TournamentDetailClient({
       const data = await res.json();
       if (!res.ok) return;
 
-      // If room ID just appeared → flag for animation
       if (
         data.roomId &&
         previousRoomIdRef.current !== data.roomId &&
@@ -49,33 +48,34 @@ export default function TournamentDetailClient({
     }
   }
 
-  // ── Fetch on mount if paid ─────────────────────────────
+  // ── Fetch on mount if registered ───────────────────────
   useEffect(() => {
-    if (!isPaid) return;
+    if (!isRegistered) return;
     fetchRoom();
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [isPaid]);
+  }, [isRegistered]);
 
   // ── Auto-refresh while room not yet published ──────────
   useEffect(() => {
-    if (!isPaid) return;
-    if (room?.roomId) return; // already published → stop polling
+    if (!isRegistered) return;
+    if (room?.roomId) return;
 
     intervalRef.current = setInterval(() => {
       fetchRoom({ silent: true });
-    }, 30000); // every 30 seconds
+    }, 30000);
 
     return () => {
       if (intervalRef.current) clearInterval(intervalRef.current);
     };
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [isPaid, room?.roomId]);
+  }, [isRegistered, room?.roomId]);
 
-  // ── Register ───────────────────────────────────────────
+  // ── Register (free — no payment step) ──────────────────
   async function handleRegister(e) {
     e.preventDefault();
     setError("");
     setLoading(true);
+
     try {
       const res = await fetch(`/api/tournaments/${tournament.id}/register`, {
         method: "POST",
@@ -83,14 +83,17 @@ export default function TournamentDetailClient({
         body: JSON.stringify({ ign, uid }),
       });
       const data = await res.json();
+
       if (!res.ok) {
         setError(data.error || "Registration failed");
+        setLoading(false);
         return;
       }
-      router.push(`/tournaments/${tournament.id}/pay`);
+
+      // ✅ No payment — reload to unlock room immediately
+      window.location.href = `/tournaments/${tournament.id}`;
     } catch {
       setError("Something went wrong");
-    } finally {
       setLoading(false);
     }
   }
@@ -110,23 +113,28 @@ export default function TournamentDetailClient({
 
   return (
     <>
-      {/* ...header and stats section unchanged... */}
+      {/* ...header and stats section — unchanged, rendered by parent... */}
 
       {error && <div className="auth-error">{error}</div>}
 
+      {/* ── NOT LOGGED IN ──────────────────────────────── */}
       {!isLoggedIn && (
         <div className="detail-card">
           <h2>Login Required</h2>
           <p>You need to log in to register for this tournament.</p>
-          <a href="/login" className="primary-button">Login</a>
+          <a href="/login" className="primary-button">
+            Login
+          </a>
         </div>
       )}
 
-      {isLoggedIn && !isPaid && (
+      {/* ── LOGGED IN, NOT REGISTERED — show form ──────── */}
+      {isLoggedIn && !isRegistered && (
         <div className="detail-card">
           <h2>Register for this Tournament</h2>
           <p className="detail-sub">
-            Enter your BGMI in-game details. These must match your game account.
+            Free to enter. Enter your BGMI in-game details — these must
+            match your game account.
           </p>
           <form className="detail-form" onSubmit={handleRegister}>
             <label>
@@ -147,15 +155,19 @@ export default function TournamentDetailClient({
                 maxLength={20}
               />
             </label>
-            <button type="submit" className="primary-button" disabled={loading}>
-              {loading ? "Please wait..." : `Register & Pay ₹${tournament.entry}`}
+            <button
+              type="submit"
+              className="primary-button"
+              disabled={loading}
+            >
+              {loading ? "Registering..." : "Register Free"}
             </button>
           </form>
         </div>
       )}
 
-      {/* ── PAID: ROOM CARD ─────────────────────────── */}
-      {isPaid && (
+      {/* ── REGISTERED: ROOM CARD ──────────────────────── */}
+      {isRegistered && (
         <div
           className={`detail-card room-unlocked ${
             roomJustAppeared ? "room-flash" : ""
@@ -166,10 +178,10 @@ export default function TournamentDetailClient({
             You're registered. Join the room in BGMI at match time.
           </p>
 
-          {/* Cancelled */}
           {isCancelled ? (
             <div className="room-state room-cancelled">
-              ❌ This tournament was cancelled. If you paid, contact support for a refund.
+              ❌ This tournament was cancelled. Contact support if you have
+              any questions.
             </div>
           ) : isCompleted ? (
             <div className="room-state room-completed">
@@ -212,21 +224,21 @@ export default function TournamentDetailClient({
               </div>
 
               <p className="room-warning">
-                ⚠️ Do not share these with anyone. Sharing results in disqualification.
+                ⚠️ Do not share these with anyone. Sharing results in
+                disqualification.
               </p>
             </>
           ) : (
-            /* Not published yet */
             <div className="room-state room-pending">
               <div className="room-pending-header">
                 <span className="room-pending-icon">⏳</span>
                 <div>
                   <strong>Room details not published yet</strong>
                   <p>
-                    The organizer will publish the room ID and password shortly
-                    before the match starts. This page auto-refreshes every 30
-                    seconds — you can leave it open, or come back closer to
-                    match time.
+                    The organizer will publish the room ID and password
+                    shortly before the match starts. This page auto-refreshes
+                    every 30 seconds — you can leave it open, or come back
+                    closer to match time.
                   </p>
                 </div>
               </div>
@@ -245,7 +257,8 @@ export default function TournamentDetailClient({
               {matchStarted && (
                 <p className="room-late-note">
                   ⚠️ Match start time has passed and the room still isn't
-                  published. Contact the organizer — they may be running late.
+                  published. Contact the organizer — they may be running
+                  late.
                 </p>
               )}
             </div>

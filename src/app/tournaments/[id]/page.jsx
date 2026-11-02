@@ -44,11 +44,11 @@ export default async function TournamentDetailPage({ params }) {
     name: tournament.name,
     mode: tournament.mode,
     map: tournament.map,
-    entry: tournament.entry,
     prize: tournament.prize,
     slots: tournament.slots,
     filled: tournament.filled,
     date: tournament.date,
+    startTime: tournament.startTime?.toISOString() || null,
     status: tournament.status,
     color: tournament.color,
   };
@@ -59,7 +59,7 @@ export default async function TournamentDetailPage({ params }) {
         <TournamentDetailClient
           tournament={t}
           isLoggedIn={isLoggedIn}
-          isPaid={registration?.paymentStatus === "paid"}
+          isRegistered={registration?.paymentStatus === "paid"}
           registrationId={registration?._id?.toString() || null}
         />
       </div>

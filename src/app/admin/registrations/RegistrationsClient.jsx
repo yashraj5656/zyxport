@@ -241,7 +241,7 @@ export default function RegistrationsClient() {
                                 {r.paymentStatus}
                               </span>
                             </td>
-                            <td>₹{r.amount}</td>
+                            <td>{r.amount === 0 ? "Free" : `₹${r.amount}`}</td>
                             <td className="reg-muted">
                               {formatDate(r.createdAt)}
                             </td>

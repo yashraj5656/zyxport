@@ -1,8 +1,10 @@
+// app/api/tournaments/[id]/register/route.js
 import { getAuthUser } from "@/lib/auth";
 import dbConnect from "@/lib/mongodb";
 import Tournament from "@/models/Tournament";
 import Registration from "@/models/Registration";
-import User from "@/models/User";
+
+export const dynamic = "force-dynamic";
 
 export async function POST(req, { params }) {
   const { id } = await params;
@@ -11,9 +13,7 @@ export async function POST(req, { params }) {
     const auth = await getAuthUser();
     if (!auth) return Response.json({ error: "Not authenticated" }, { status: 401 });
 
-    const body = await req.json();
-    const { ign, uid } = body;
-
+    const { ign, uid } = await req.json();
     if (!ign || !uid) {
       return Response.json({ error: "IGN and UID required" }, { status: 400 });
     }
@@ -35,34 +35,29 @@ export async function POST(req, { params }) {
     });
 
     if (existing) {
-      if (existing.paymentStatus === "paid") {
-        return Response.json({ error: "Already registered" }, { status: 400 });
-      }
-      // Reuse pending registration
-      existing.ign = ign;
-      existing.uid = uid;
-      await existing.save();
-      return Response.json({
-        registrationId: existing._id.toString(),
-        paymentUrl: `/tournaments/${id}/pay`,
-        amount: tournament.entry,
-      });
+      return Response.json(
+        { error: "You are already registered for this tournament" },
+        { status: 400 }
+      );
     }
 
-    const reg = await Registration.create({
+    // ✅ Free registration — mark as paid instantly
+    await Registration.create({
       user: auth.userId,
       tournament: tournament._id,
-      ign,
-      uid,
-      amount: tournament.entry,
-      paymentStatus: "pending",
+      ign: ign.trim(),
+      uid: uid.trim(),
+      amount: 0,
+      paymentStatus: "paid",
+      paidAt: new Date(),
+      paymentId: "FREE_ENTRY",
     });
 
-    return Response.json({
-      registrationId: reg._id.toString(),
-      paymentUrl: `/tournaments/${id}/pay`,
-      amount: tournament.entry,
-    });
+    // Increment filled counter
+    tournament.filled = Math.min(tournament.slots, tournament.filled + 1);
+    await tournament.save();
+
+    return Response.json({ success: true });
   } catch (err) {
     console.error("Register error:", err);
     return Response.json({ error: "Registration failed" }, { status: 500 });

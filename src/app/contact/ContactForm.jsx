@@ -97,7 +97,6 @@ export default function ContactForm() {
         >
           <option value="">Select a topic...</option>
           <option value="tournament">Tournament Query</option>
-          <option value="payment">Payment Issue</option>
           <option value="refund">Refund Request</option>
           <option value="technical">Technical Problem</option>
           <option value="partnership">Partnership / Sponsorship</option>

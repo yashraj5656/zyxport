@@ -9,7 +9,7 @@ export const dynamic = "force-dynamic";
 export const metadata = {
   title: "About — Zyxport Esports",
   description:
-    "Zyxport is a competitive BGMI tournament platform built for players who want to prove their skill and win real prizes.",
+    "Zyxport is a free-to-enter competitive BGMI tournament platform built for players who want to prove their skill and win real prizes.",
 };
 
 const values = [
@@ -17,19 +17,19 @@ const values = [
     icon: "🎯",
     title: "Skill First",
     description:
-      "Every tournament is designed around pure competition. No gimmicks, no pay-to-win — just you, your squad, and the drop.",
+      "Every tournament is designed around pure competition. No entry fees, no gimmicks, no pay-to-win — just you, your squad, and the drop.",
   },
   {
     icon: "⚡",
-    title: "Fast & Fair",
+    title: "Free to Enter",
     description:
-      "Instant room access after payment, transparent prize pools, and payouts processed within 48 hours of results.",
+      "Every tournament on Zyxport is completely free. No entry fee, no hidden charges — just register and play.",
   },
   {
     icon: "🔒",
-    title: "Secure by Design",
+    title: "Fair & Secure",
     description:
-      "Payments through Razorpay, room credentials locked behind payment, and your data never sold or shared.",
+      "Verified registration, room credentials locked behind signup, and your data never sold or shared.",
   },
   {
     icon: "🏆",
@@ -50,13 +50,13 @@ const steps = [
     number: "02",
     title: "Pick Your Battle",
     description:
-      "Browse upcoming tournaments by mode, map, entry fee, and prize pool. Register for the ones that match your skill.",
+      "Browse upcoming tournaments by mode, map, and prize pool. Every tournament is free to enter.",
   },
   {
     number: "03",
-    title: "Pay & Get Room Access",
+    title: "Register & Get Room Access",
     description:
-      "Secure checkout through Razorpay. Room ID and password unlock instantly after payment.",
+      "No payment needed. Room ID and password unlock instantly after you register.",
   },
   {
     number: "04",
@@ -109,10 +109,10 @@ export default async function AboutPage() {
             <span>REFUSE TO STAY AVERAGE.</span>
           </h1>
           <p>
-            Zyxport is a competitive BGMI tournament platform created by
-            players, for players. We believe skill should pay — literally.
-            No filler, no fluff, no pay-to-win. Just competitive matches
-            with real prize money and clean payouts.
+            Zyxport is a free-to-enter competitive BGMI tournament platform
+            created by players, for players. We believe skill should pay —
+            literally. No entry fees, no gimmicks, no pay-to-win. Just
+            competitive matches with real prize money and clean payouts.
           </p>
 
           <div className="about-hero-actions">
@@ -166,16 +166,17 @@ export default async function AboutPage() {
 
             <div className="about-mission-text">
               <p>
-                Competitive BGMI has a problem: most tournaments are either
-                riddled with cheaters, pay out in useless wallet coins, or
-                ask for a month-long verification process just to withdraw
-                your winnings.
+                Competitive BGMI has a problem: most tournaments either
+                charge entry fees, are riddled with cheaters, pay out in
+                useless wallet coins, or ask for a month-long verification
+                process just to withdraw your winnings.
               </p>
               <p>
-                We built Zyxport to fix that. Every tournament runs on
-                verified entry, every prize is tracked, and every payout
-                goes to your <strong>actual bank account</strong> — not
-                some locked-in platform currency.
+                We built Zyxport to fix that. Every tournament is{" "}
+                <strong>completely free to enter</strong>, every prize is
+                tracked, and every payout goes to your{" "}
+                <strong>actual bank account</strong> — not some locked-in
+                platform currency.
               </p>
               <p>
                 Our long-term goal is simple: become the most trusted
@@ -321,7 +322,7 @@ export default async function AboutPage() {
           </h2>
           <p>
             Join hundreds of BGMI players competing for real prize money
-            every week.
+            every week — completely free.
           </p>
           <div className="about-cta-actions">
             <Link href="/signup" className="primary-button">

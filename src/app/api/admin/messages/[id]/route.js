@@ -2,6 +2,8 @@ import { requireAdmin } from "@/lib/requireAdmin";
 import dbConnect from "@/lib/mongodb";
 import ContactMessage from "@/models/ContactMessage";
 
+export const dynamic = "force-dynamic"; 
+
 export async function PATCH(req, { params }) {
   const guard = await requireAdmin();
   if (guard.error) {

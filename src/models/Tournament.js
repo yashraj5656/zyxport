@@ -6,7 +6,7 @@ const SponsorSchema = new mongoose.Schema(
     name: { type: String, required: true, trim: true, maxlength: 60 },
     tagline: { type: String, default: "", trim: true, maxlength: 60 },
     href: { type: String, default: "#", trim: true },
-    logo: { type: String, default: "🎯", trim: true, maxlength: 8 },
+    logo: { type: String, default: "🎯", trim: true, maxlength: 500 },
     tier: {
       type: String,
       enum: ["title", "gold", "community"],
@@ -176,6 +176,7 @@ const TournamentSchema = new mongoose.Schema(
 
     sponsors: { type: [SponsorSchema], default: [] },
     pageContent: { type: PageContentSchema, default: () => ({}) },   // 👈 new
+    bannerImage: { type: String, default: "", trim: true }, 
   },
   { timestamps: true }
 );

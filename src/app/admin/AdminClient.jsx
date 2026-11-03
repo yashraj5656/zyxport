@@ -32,6 +32,7 @@ const emptyForm = {
   roomPassword: "",
   sponsors: [],
   pageContent: {},
+  bannerImage: "", // 👈 Add this
 };
 
 export default function AdminClient() {
@@ -80,6 +81,7 @@ export default function AdminClient() {
       roomPassword: t.roomPassword || "",
       sponsors: Array.isArray(t.sponsors) ? t.sponsors : [],
       pageContent: t.pageContent || {},
+      bannerImage: t.bannerImage || "", // 👈 Add this
     });
     window.scrollTo({ top: 0, behavior: "smooth" });
   }
@@ -313,6 +315,14 @@ export default function AdminClient() {
               ))}
             </select>
           </label>
+          <label className="span-2">
+  Banner Image URL (Optional)
+  <input
+    value={form.bannerImage || ""}
+    onChange={(e) => setForm({ ...form, bannerImage: e.target.value })}
+    placeholder="https://example.com/image.jpg"
+  />
+</label>
         </div>
 
         {/* ═══ SPONSORS ═══ */}
@@ -388,7 +398,7 @@ export default function AdminClient() {
                           updateSponsor(idx, "logo", e.target.value)
                         }
                         placeholder="🎯"
-                        maxLength={8}
+                        maxLength={500}
                       />
                     </label>
 

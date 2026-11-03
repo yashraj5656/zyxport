@@ -151,6 +151,7 @@ export async function POST(req) {
       roomPassword: (body.roomPassword || "").trim(),
       sponsors: sanitizeSponsors(body.sponsors),
       pageContent: sanitizePageContent(body.pageContent),
+      bannerImage: body.bannerImage || "",
     });
 
     return Response.json({

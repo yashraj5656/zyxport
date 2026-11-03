@@ -27,6 +27,7 @@ async function getTournaments() {
       date: t.date,
       status: t.status,
       color: t.color,
+      bannerImage: t.bannerImage || "",
     }));
   } catch (err) {
     console.error("Tournaments fetch error:", err);
@@ -87,17 +88,44 @@ function TournamentCard({ tournament }) {
 
   return (
     <article className="tournament-card">
-      <div className={`tournament-banner ${tournament.color}`}>
-        <div className="banner-top">
+      <div 
+        className={`tournament-banner ${tournament.color}`}
+        style={
+          tournament.bannerImage 
+            ? { 
+                backgroundImage: `url(${tournament.bannerImage})`,
+                backgroundSize: "cover",
+                backgroundPosition: "center",
+                position: "relative"
+              } 
+            : {}
+        }
+      >
+        {/* Dark overlay so text is readable on images */}
+        {tournament.bannerImage && (
+          <div style={{
+            position: "absolute",
+            inset: 0,
+            background: "linear-gradient(to right, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.2) 100%)",
+            zIndex: 1
+          }} />
+        )}
+
+        <div className="banner-top" style={{ position: "relative", zIndex: 2 }}>
           <span className="game-tag">BGMI</span>
           <span className="status-tag">{tournament.status}</span>
         </div>
-        <div className="banner-content">
+
+        <div className="banner-content" style={{ position: "relative", zIndex: 2 }}>
           <span className="map-label">{tournament.map} MAP</span>
           <h3>{tournament.name}</h3>
           <p>{tournament.mode}</p>
         </div>
-        <div className="banner-decoration">⚔</div>
+
+        {/* Only show the decorative swords if there is NO image */}
+        {!tournament.bannerImage && (
+          <div className="banner-decoration">⚔</div>
+        )}
       </div>
 
       <div className="tournament-details">

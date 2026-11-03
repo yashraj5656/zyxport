@@ -45,7 +45,8 @@ export async function GET() {
         startTime: t.startTime?.toISOString() || null,   // 👈 added
         status: t.status,
         color: t.color,
-        sponsors: pickSponsors(t.sponsors),              // 👈 sanitized
+        sponsors: pickSponsors(t.sponsors), 
+        bannerImage: t.bannerImage || "",           
       })),
     });
   } catch (err) {

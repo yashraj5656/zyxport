@@ -43,6 +43,7 @@ export async function PATCH(req, { params }) {
       "color",
       "roomId",
       "roomPassword",
+      "bannerImage",
     ]) {
       if (typeof body[key] === "string") {
         updates[key] = body[key].trim();

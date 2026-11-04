@@ -94,6 +94,8 @@ export default function NavbarClient({ user }) {
           <Link href="/leaderboard" onClick={closeMenu}>
             Leaderboard
           </Link>
+          <Link href="/guides" onClick={closeMenu}>
+          Guides</Link>
           <Link href="/about" onClick={closeMenu}>
             About
           </Link>

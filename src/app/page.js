@@ -1,6 +1,8 @@
 import Link from "next/link";
 import dbConnect from "@/lib/mongodb";
 import Tournament from "@/models/Tournament";
+import { guides } from "@/lib/guidesData";
+import GuideCard from "@/components/GuideCard";
 
 export const dynamic = "force-dynamic";
 
@@ -288,6 +290,34 @@ export default async function Home() {
               ))}
             </div>
           )}
+        </div>
+      </section>
+
+
+           {/* GUIDES & NEWS */}
+           <section className="section how-section" id="guides">
+        <div className="section-container">
+          <div className="section-heading">
+            <div>
+              <span className="eyebrow">LEVEL UP</span>
+              <h2>
+                LATEST <span>GUIDES</span>
+              </h2>
+              <p>
+                Master your skills, read the rules, and stay updated with the community.
+              </p>
+            </div>
+            <Link href="/guides" className="view-all">
+              View All Guides →
+            </Link>
+          </div>
+
+          <div className="guides-grid home-grid">
+            {/* Show only the first 4 articles */}
+            {guides.slice(0, 4).map((guide) => (
+              <GuideCard key={guide.slug} guide={guide} />
+            ))}
+          </div>
         </div>
       </section>
 

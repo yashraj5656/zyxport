@@ -1,0 +1,256 @@
+/* app/guides/guides.css */
+
+/* --- COMMON --- */
+.guides-page, .article-page {
+    background: #080a0b;
+    min-height: calc(100vh - 82px);
+    padding: 80px 20px 100px;
+  }
+  
+  .guides-container {
+    max-width: 1200px;
+    margin: auto;
+  }
+  
+  .guides-header {
+    text-align: center;
+    margin-bottom: 60px;
+  }
+  
+  .guides-header h1 {
+    font-family: "Barlow Condensed", sans-serif;
+    font-size: clamp(42px, 7vw, 68px);
+    font-weight: 900;
+    line-height: 0.95;
+    margin: 12px 0 16px;
+  }
+  
+  .guides-header h1 span {
+    color: var(--green);
+  }
+  
+  .guides-header p {
+    color: var(--muted);
+    font-size: 14px;
+    line-height: 1.7;
+    max-width: 600px;
+    margin: auto;
+  }
+  
+  /* --- GUIDE GRID & CARDS --- */
+  .guides-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+  }
+  
+  .home-grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+  }
+  
+  .guide-card {
+    display: flex;
+    flex-direction: column;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 24px;
+    text-decoration: none;
+    color: inherit;
+    transition: 0.2s;
+  }
+  
+  .guide-card:hover {
+    border-color: rgba(181, 255, 54, 0.4);
+    transform: translateY(-4px);
+  }
+  
+  .guide-card-header {
+    margin-bottom: 16px;
+  }
+  
+  .guide-category {
+    font-size: 9px;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--green);
+    background: rgba(181, 255, 54, 0.1);
+    padding: 4px 8px;
+    border-radius: 3px;
+  }
+  
+  .guide-card-body {
+    flex: 1;
+  }
+  
+  .guide-card-body h3 {
+    font-family: "Barlow Condensed", sans-serif;
+    font-size: 22px;
+    font-weight: 800;
+    line-height: 1.2;
+    margin-bottom: 12px;
+    color: var(--text);
+  }
+  
+  .guide-card-body p {
+    color: var(--muted);
+    font-size: 13px;
+    line-height: 1.6;
+    margin-bottom: 24px;
+  }
+  
+  .guide-card-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid var(--border);
+    padding-top: 16px;
+    font-size: 11px;
+    color: #69736c;
+    font-weight: 600;
+  }
+  
+  .guide-read-time {
+    color: var(--green);
+  }
+  
+  /* --- ARTICLE PAGE --- */
+  .article-container {
+    max-width: 760px;
+    margin: auto;
+  }
+  
+  .article-back {
+    display: inline-block;
+    color: var(--muted);
+    font-size: 12px;
+    font-weight: 700;
+    text-decoration: none;
+    margin-bottom: 40px;
+    transition: color 0.2s;
+  }
+  
+  .article-back:hover {
+    color: var(--green);
+  }
+  
+  .article-header {
+    margin-bottom: 40px;
+    padding-bottom: 40px;
+    border-bottom: 1px solid var(--border);
+  }
+  
+  .article-header h1 {
+    font-family: "Barlow Condensed", sans-serif;
+    font-size: clamp(36px, 6vw, 56px);
+    font-weight: 900;
+    line-height: 1.05;
+    margin: 16px 0;
+  }
+  
+  .article-meta {
+    display: flex;
+    gap: 12px;
+    color: var(--muted);
+    font-size: 12px;
+    font-weight: 600;
+  }
+  
+  /* Typography for the article content */
+  .article-content {
+    color: #c8d0cb;
+    font-size: 16px;
+    line-height: 1.8;
+  }
+  
+  .article-content h3 {
+    font-family: "Barlow Condensed", sans-serif;
+    font-size: 26px;
+    font-weight: 800;
+    color: var(--text);
+    margin: 40px 0 16px;
+  }
+  
+  .article-content p {
+    margin-bottom: 24px;
+  }
+  
+  .article-content ul {
+    margin-bottom: 24px;
+    padding-left: 20px;
+  }
+  
+  .article-content li {
+    margin-bottom: 10px;
+  }
+  
+  .article-content strong {
+    color: var(--green);
+    font-weight: 700;
+  }
+  
+  /* --- RELATED ARTICLES --- */
+  .article-divider {
+    height: 1px;
+    background: var(--border);
+    margin: 60px 0;
+  }
+  
+  .related-articles h2 {
+    font-family: "Barlow Condensed", sans-serif;
+    font-size: 28px;
+    font-weight: 900;
+    margin-bottom: 24px;
+  }
+  
+  .related-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+  }
+  
+  .related-card {
+    background: var(--surface);
+    padding: 20px;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    text-decoration: none;
+    transition: 0.2s;
+  }
+  
+  .related-card:hover {
+    border-color: var(--green);
+  }
+  
+  .related-card span {
+    font-size: 9px;
+    font-weight: 800;
+    color: var(--green);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+  
+  .related-card h3 {
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--text);
+    margin-top: 8px;
+    line-height: 1.3;
+  }
+  
+  /* --- RESPONSIVE --- */
+  @media (max-width: 1000px) {
+    .guides-grid { grid-template-columns: repeat(2, 1fr); }
+    .home-grid { grid-template-columns: repeat(2, 1fr); }
+    .related-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+  
+  @media (max-width: 700px) {
+    .guides-page, .article-page { padding: 40px 16px 80px; }
+    .guides-grid { grid-template-columns: 1fr; }
+    .home-grid { grid-template-columns: 1fr; }
+    .related-grid { grid-template-columns: 1fr; }
+    .article-content { font-size: 15px; }
+  }

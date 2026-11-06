@@ -777,6 +777,7 @@ export default function AdminClient() {
                 <th>Start</th>
                 <th>Sponsors</th>
                 <th>Actions</th>
+                <th>Organizer</th>
               </tr>
             </thead>
             <tbody>
@@ -816,6 +817,15 @@ export default function AdminClient() {
                       Delete
                     </button>
                   </td>
+                  <td>
+  {t.organizer ? (
+    <span style={{ color: "var(--green)", fontSize: "12px" }}>
+      {t.organizer.name}
+    </span>
+  ) : (
+    <span style={{ color: "var(--muted)" }}>ZYXPORT Admin</span>
+  )}
+</td>
                 </tr>
               ))}
             </tbody>

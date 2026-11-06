@@ -1,0 +1,262 @@
+/* ============================================================
+   ORGANIZERS PAGE
+   ============================================================ */
+
+   .org-page {
+    background: #080a0b;
+    min-height: calc(100vh - 82px);
+  }
+  
+  /* ─── HERO SECTION ────────────────────────────────────────── */
+  
+  .org-hero {
+    position: relative;
+    padding: 100px 20px;
+    background: #0b1010;
+    border-bottom: 1px solid var(--border);
+    overflow: hidden;
+    text-align: center;
+  }
+  
+  .org-hero-bg {
+    position: absolute;
+    inset: 0;
+    background: 
+      radial-gradient(ellipse at 50% 0%, rgba(181, 255, 54, 0.1), transparent 60%),
+      linear-gradient(180deg, transparent 0%, #080a0b 100%);
+    pointer-events: none;
+  }
+  
+  .org-hero .eyebrow {
+    color: var(--green);
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+  }
+  
+  .org-hero h1 {
+    font-family: "Barlow Condensed", sans-serif;
+    font-size: clamp(42px, 8vw, 76px);
+    font-weight: 900;
+    line-height: 0.95;
+    letter-spacing: -1px;
+    margin: 16px 0 24px;
+    color: var(--text);
+  }
+  
+  .org-hero h1 span {
+    color: var(--green);
+    text-shadow: 0 0 40px rgba(181, 255, 54, 0.2);
+  }
+  
+  .org-hero p {
+    color: #a3aaa5;
+    font-size: 15px;
+    line-height: 1.8;
+    max-width: 680px;
+    margin: 0 auto 32px;
+  }
+  
+  .org-hero-actions {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  
+  /* ─── FEATURES SECTION ────────────────────────────────────── */
+  
+  .org-features-section {
+    background: #0b0e0e;
+    padding: 80px 0;
+  }
+  
+  .org-features-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    margin-top: 40px;
+  }
+  
+  .org-feature-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    padding: 32px 24px;
+    border-radius: 8px;
+    transition: transform 0.2s, border-color 0.2s;
+  }
+  
+  .org-feature-card:hover {
+    border-color: rgba(181, 255, 54, 0.3);
+    transform: translateY(-4px);
+  }
+  
+  .org-feature-card span {
+    font-size: 32px;
+    display: block;
+    margin-bottom: 16px;
+  }
+  
+  .org-feature-card h3 {
+    font-size: 16px;
+    font-weight: 800;
+    color: var(--text);
+    margin-bottom: 10px;
+  }
+  
+  .org-feature-card p {
+    font-size: 13px;
+    color: var(--muted);
+    line-height: 1.6;
+  }
+  
+  /* ─── PRICING SECTION ─────────────────────────────────────── */
+  
+  .org-pricing-section {
+    background: #080a0b;
+    padding: 100px 0;
+    position: relative;
+  }
+  
+  .org-pricing-grid {
+    display: grid;
+    margin: 0 auto;
+    align-items: stretch;
+  }
+  
+  .org-price-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 48px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+  }
+  
+  /* The glowing "Popular" card */
+  .org-price-card.popular {
+    border-color: var(--green);
+    background: 
+      radial-gradient(ellipse at top, rgba(181, 255, 54, 0.08), transparent 60%),
+      var(--surface);
+    box-shadow: 0 0 40px rgba(181, 255, 54, 0.1);
+  }
+  
+  .org-popular-badge {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: var(--green);
+    color: #050607;
+    font-size: 10px;
+    font-weight: 900;
+    padding: 6px 16px;
+    border-radius: 999px;
+    letter-spacing: 1.5px;
+    box-shadow: 0 4px 12px rgba(181, 255, 54, 0.3);
+  }
+  
+  .org-price-header h3 {
+    font-family: "Barlow Condensed", sans-serif;
+    font-size: 32px;
+    font-weight: 900;
+    color: var(--text);
+    margin-bottom: 4px;
+    line-height: 1;
+  }
+  
+  .org-price-header p {
+    font-size: 13px;
+    color: var(--muted);
+    margin-bottom: 28px;
+  }
+  
+  .org-price-amount {
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+    margin-bottom: 32px;
+    padding-bottom: 32px;
+    border-bottom: 1px solid var(--border);
+  }
+  
+  .org-price-amount strong {
+    font-family: "Barlow Condensed", sans-serif;
+    font-size: 56px;
+    font-weight: 900;
+    color: var(--green);
+    line-height: 0.9;
+  }
+  
+  .org-price-amount span {
+    color: var(--muted);
+    font-size: 14px;
+    font-weight: 600;
+  }
+  
+  .org-price-features {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 40px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  
+  .org-price-features li {
+    font-size: 14px;
+    color: #c8d0cb;
+    font-weight: 500;
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+  }
+  
+  .org-price-features li::before {
+    content: "✓";
+    color: var(--green);
+    font-weight: 900;
+    font-size: 14px;
+  }
+  
+  /* ─── RESPONSIVE ──────────────────────────────────────────── */
+  
+  @media (max-width: 1000px) {
+    .org-features-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  
+  @media (max-width: 700px) {
+    .org-hero {
+      padding: 70px 16px;
+    }
+  
+    .org-hero h1 {
+      font-size: clamp(36px, 10vw, 52px);
+    }
+  
+    .org-hero p {
+      font-size: 14px;
+    }
+  
+    .org-features-grid {
+      grid-template-columns: 1fr;
+    }
+  
+    .org-pricing-section {
+      padding: 70px 0;
+    }
+  
+    .org-price-card {
+      padding: 32px 24px;
+    }
+  
+    .org-price-amount strong {
+      font-size: 48px;
+    }
+  }

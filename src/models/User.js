@@ -26,6 +26,11 @@ const UserSchema = new mongoose.Schema(
         // 👇 Admin flag
         isAdmin: { type: Boolean, default: false },
 
+// ... existing fields
+isOrganizer: { type: Boolean, default: false },
+subscriptionExpiry: { type: Date, default: null },
+subscriptionId: { type: String, default: "" }, // For Razorpay reference
+
     // 👇 Optional profile fields
     ign: {
       type: String,

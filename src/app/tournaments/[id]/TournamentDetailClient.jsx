@@ -18,9 +18,11 @@ export default function TournamentDetailClient({
   const [roomLoading, setRoomLoading] = useState(isRegistered);
   const [roomJustAppeared, setRoomJustAppeared] = useState(false);
   const [copied, setCopied] = useState("");
+  
   const previousRoomIdRef = useRef(null);
   const intervalRef = useRef(null);
 
+  // ── Fetch room data ────────────────────────────────────
   async function fetchRoom({ silent = false } = {}) {
     if (!silent) setRoomLoading(true);
     try {
@@ -53,6 +55,7 @@ export default function TournamentDetailClient({
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isRegistered]);
 
+  // ── Auto-refresh while room not yet published ──────────
   useEffect(() => {
     if (!isRegistered) return;
     if (room?.roomId) return;
@@ -67,18 +70,26 @@ export default function TournamentDetailClient({
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isRegistered, room?.roomId]);
 
+  // ── Register (Free) ────────────────────────────────────
   async function handleRegister(e) {
     e.preventDefault();
     setError("");
     setLoading(true);
+
+    // 10-second timeout safeguard to prevent infinite loading
+    const controller = new AbortController();
+    const timeoutId = setTimeout(() => controller.abort(), 10000);
 
     try {
       const res = await fetch(`/api/tournaments/${tournament.id}/register`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ ign, uid }),
+        signal: controller.signal,
       });
+
       const data = await res.json();
+      clearTimeout(timeoutId);
 
       if (!res.ok) {
         setError(data.error || "Registration failed");
@@ -86,10 +97,24 @@ export default function TournamentDetailClient({
         return;
       }
 
-      window.location.href = `/tournaments/${tournament.id}#register`;
-    } catch {
-      setError("Something went wrong");
-      setLoading(false);
+      // 👈 SUCCESS: Use Next.js router to refresh server data
+      // This updates `isRegistered` on the server without a full page reload.
+      router.refresh();
+      
+      // Optional: Smoothly scroll to the room section (if it re-renders below)
+      setTimeout(() => {
+        const el = document.getElementById("register");
+        if (el) el.scrollIntoView({ behavior: "smooth" });
+      }, 500);
+      
+    } catch (err) {
+      clearTimeout(timeoutId);
+      if (err.name === "AbortError") {
+        setError("Request timed out. Please check your connection and try again.");
+      } else {
+        setError("Something went wrong. Please try again.");
+      }
+      setLoading(false); // 👈 Re-enable the button if anything fails
     }
   }
 
@@ -134,6 +159,7 @@ export default function TournamentDetailClient({
                 onChange={(e) => setIgn(e.target.value)}
                 required
                 maxLength={32}
+                disabled={loading}
               />
             </label>
             <label>
@@ -143,6 +169,7 @@ export default function TournamentDetailClient({
                 onChange={(e) => setUid(e.target.value)}
                 required
                 maxLength={20}
+                disabled={loading}
               />
             </label>
             <button
@@ -158,6 +185,7 @@ export default function TournamentDetailClient({
 
       {isRegistered && (
         <div
+          id="register"
           className={`detail-card room-unlocked ${
             roomJustAppeared ? "room-flash" : ""
           }`}

@@ -2,6 +2,7 @@
 import { requireAdmin } from "@/lib/requireAdmin";
 import dbConnect from "@/lib/mongodb";
 import Tournament from "@/models/Tournament";
+import User from "@/models/User";
 
 export const dynamic = "force-dynamic";
 
@@ -52,7 +53,7 @@ export async function GET() {
   }
 
   await dbConnect();
-  const list = await Tournament.find().sort({ startTime: 1 }).lean();
+  const list = await Tournament.find().sort({ startTime: 1 }).populate("organizer", "name email").lean();
 
   return Response.json({
     tournaments: list.map((t) => ({

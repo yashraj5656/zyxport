@@ -20,6 +20,8 @@ export async function getCurrentUser() {
       bio: doc.bio || "",
       avatar: doc.avatar || "",
       isAdmin: doc.isAdmin || false,  
+      isOrganizer: doc.isOrganizer === true,
+      subscriptionExpiry: doc.subscriptionExpiry ? doc.subscriptionExpiry.toISOString() : null,
       createdAt: doc.createdAt
         ? doc.createdAt.toISOString()
         : new Date().toISOString(),

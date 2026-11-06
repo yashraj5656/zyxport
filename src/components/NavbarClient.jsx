@@ -94,6 +94,20 @@ export default function NavbarClient({ user }) {
           <Link href="/leaderboard" onClick={closeMenu}>
             Leaderboard
           </Link>
+
+          {userIsAdmin ? (
+  <Link href="/admin" onClick={closeMenu}>
+    ⚙ Admin Panel
+  </Link>
+) : user?.isOrganizer ? (
+  <Link href="/organizer" onClick={closeMenu}>
+    Organizer Dashboard
+  </Link>
+) : (
+  <Link href="/organizers" onClick={closeMenu}>
+    Become Organizer
+  </Link>
+)}
           <Link href="/guides" onClick={closeMenu}>
           Guides</Link>
           <Link href="/about" onClick={closeMenu}>
@@ -195,11 +209,21 @@ export default function NavbarClient({ user }) {
                     🏆 Leaderboard
                   </Link>
 
-                  {userIsAdmin && (
-                    <Link href="/admin" className="profile-item">
-                      ⚙ Admin Panel
-                    </Link>
-                  )}
+                 
+
+{userIsAdmin ? (
+  <Link href="/admin" className="profile-item">
+    ⚙ Admin Panel
+  </Link>
+) : user?.isOrganizer ? (
+  <Link href="/organizer" className="profile-item">
+    🎮 Organizer Dashboard
+  </Link>
+) : (
+  <Link href="/organizers" className="profile-item">
+    🚀 Become Organizer
+  </Link>
+)}
 
                   <button
                     type="button"

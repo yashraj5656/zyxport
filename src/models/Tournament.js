@@ -177,6 +177,14 @@ const TournamentSchema = new mongoose.Schema(
     sponsors: { type: [SponsorSchema], default: [] },
     pageContent: { type: PageContentSchema, default: () => ({}) },   // 👈 new
     bannerImage: { type: String, default: "", trim: true }, 
+    // models/Tournament.js
+organizer: { 
+  type: mongoose.Schema.Types.ObjectId, 
+  ref: "User", 
+  required: false, // False for legacy tournaments made by Admin
+  index: true 
+},
+prizePaid: { type: Boolean, default: false },
   },
   { timestamps: true }
 );

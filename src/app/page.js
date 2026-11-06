@@ -294,6 +294,54 @@ export default async function Home() {
       </section>
 
 
+            {/* ═══ BECOME AN ORGANIZER SECTION ═══ */}
+            <section className="section org-promo-section">
+        <div className="section-container">
+          <div className="org-promo-card">
+            <div className="org-promo-content">
+              <span className="eyebrow">FOR TOURNAMENT ORGANIZERS</span>
+              <h2>
+                WANT TO HOST YOUR OWN <span>TOURNAMENT?</span>
+              </h2>
+              <p>
+                Skip the spreadsheets and manual room IDs. Use ZYXPORT's infrastructure to host fair, competitive BGMI matches. Get unlimited tournaments, secure room delivery, and player management for just <strong>₹799/month</strong>.
+              </p>
+              
+              <div className="org-promo-features">
+                <div><span>✓</span> Unlimited Tournaments</div>
+                <div><span>✓</span> Secure Room IDs</div>
+                <div><span>✓</span> Custom Branding</div>
+              </div>
+
+              <div className="org-promo-actions">
+                <Link href="/organizers" className="primary-button">
+                  Become an Organizer <span>→</span>
+                </Link>
+                <span className="org-promo-price">Starting at ₹799/mo</span>
+              </div>
+            </div>
+
+            <div className="org-promo-visual">
+              <div className="org-visual-card">
+                <div className="org-visual-header">
+                  <span className="dot"></span>
+                  <span className="dot"></span>
+                  <span className="dot"></span>
+                </div>
+                <div className="org-visual-body">
+                  <div className="org-visual-icon">🎮</div>
+                  <h3>Organizer Dashboard</h3>
+                  <div className="org-visual-bar"><div className="org-visual-fill"></div></div>
+                  <p>Room ID: 8123 4567</p>
+                  <p>Password: zyx123</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
            {/* GUIDES & NEWS */}
            <section className="section how-section" id="guides">
         <div className="section-container">

@@ -21,6 +21,32 @@ export const guides = [
       `,
     },
     {
+      slug: "how-to-host-your-first-tournament",
+      title: "How to Host Your First Tournament on ZYXPORT",
+      excerpt: "From setting the prize pool to locking the room, here is everything you need to know about running a flawless BGMI event.",
+      date: "Nov 6, 2026",
+      readTime: "4 min read",
+      category: "Organizers",
+      content: `
+        <p>Hosting a BGMI tournament can be a logistical nightmare. Between verifying players, managing payments, and dealing with room IDs, the actual esports aspect often gets lost. ZYXPORT was built to fix that. Here is how you can use our platform to host a professional-grade tournament in minutes.</p>
+        
+        <h3>1. Get Your Organizer Access</h3>
+        <p>To prevent spam and ensure quality, hosting is a premium feature. You can unlock the Organizer Dashboard by subscribing to our introductory plan for just <strong>₹799/month</strong>. This gives you unlimited tournament hosting and full access to our player management tools.</p>
+        
+        <h3>2. Set Up Your Custom Tournament Page</h3>
+        <p>Once you are in the dashboard, create your tournament. You can choose the map, mode, and prize pool. The best part? You can fully customize the page with your own branding. Add your sponsor logos, change the page text, and make it feel like your own event.</p>
+        
+        <h3>3. Manage Registrations Effortlessly</h3>
+        <p>You don't have to chase players on Discord for their UIDs. When players register through ZYXPORT, their IGN and UID are automatically collected and verified. You can view the entire roster in your dashboard, ready to be exported to BGMI.</p>
+        
+        <h3>4. Secure Room Distribution</h3>
+        <p>The biggest pain point for organizers is leaked room IDs. With ZYXPORT, the Room ID and Password are locked behind a secure wall. Only players who have successfully registered can see them on their tournament page. You simply update the Room ID in your dashboard, and it unlocks instantly for all verified players.</p>
+        
+        <h3>5. Publish Results and Payouts</h3>
+        <p>Once the final match concludes, use the dashboard to mark the winners. The results will instantly reflect on the global ZYXPORT Leaderboard, and players' profiles will update with their new winnings. Hosting a tournament has never been this streamlined.</p>
+      `,
+    },
+    {
       slug: "complete-tournament-rules",
       title: "Complete ZYXPORT Tournament Rules",
       excerpt: "The ultimate rulebook. Read this before you compete to ensure your squad doesn't get penalized.",

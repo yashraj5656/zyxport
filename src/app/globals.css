@@ -42,7 +42,9 @@ button {
   color: #080a0b;
 }
 
-/* HERO */
+/* ============================================================
+   HERO SECTION
+   ============================================================ */
 
 .hero {
   min-height: 650px;
@@ -165,6 +167,11 @@ button {
   color: #10140a;
 }
 
+.primary-button:hover {
+  background: #d0ff83;
+  transform: translateY(-2px);
+}
+
 .secondary-button {
   border: 1px solid var(--border);
   color: white;
@@ -242,10 +249,6 @@ button {
   color: var(--muted);
 }
 
-.online-dot {
-  font-size: 9px;
-}
-
 .game-symbol {
   text-align: center;
   font-size: 130px;
@@ -286,34 +289,13 @@ button {
   box-shadow: 0 15px 35px rgba(0,0,0,0.35);
 }
 
-.floating-card > span {
-  font-size: 25px;
-}
+.floating-card > span { font-size: 25px; }
+.floating-card div { display: flex; flex-direction: column; gap: 4px; }
+.floating-card strong { font-size: 14px; }
+.floating-card small { font-size: 10px; color: var(--muted); }
 
-.floating-card div {
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-}
-
-.floating-card strong {
-  font-size: 14px;
-}
-
-.floating-card small {
-  font-size: 10px;
-  color: var(--muted);
-}
-
-.floating-one {
-  top: 65px;
-  right: -5px;
-}
-
-.floating-two {
-  bottom: 55px;
-  left: -15px;
-}
+.floating-one { top: 65px; right: -5px; }
+.floating-two { bottom: 55px; left: -15px; }
 
 .hero-bottom {
   max-width: 1240px;
@@ -329,7 +311,9 @@ button {
   z-index: 2;
 }
 
-/* COMMON SECTIONS */
+/* ============================================================
+   COMMON SECTIONS & TOURNAMENTS
+   ============================================================ */
 
 .section {
   padding: 105px 0;
@@ -341,9 +325,7 @@ button {
   padding: 0 25px;
 }
 
-.tournaments-section {
-  background: #0b0e0e;
-}
+.tournaments-section { background: #0b0e0e; }
 
 .section-heading {
   display: flex;
@@ -385,7 +367,7 @@ button {
   white-space: nowrap;
 }
 
-/* TOURNAMENT CARDS */
+.view-all:hover { color: #d0ff83; }
 
 .tournament-grid {
   display: grid;
@@ -416,17 +398,9 @@ button {
   justify-content: space-between;
 }
 
-.tournament-banner.green {
-  background: linear-gradient(130deg, #263c22, #111c17);
-}
-
-.tournament-banner.purple {
-  background: linear-gradient(130deg, #302347, #191323);
-}
-
-.tournament-banner.orange {
-  background: linear-gradient(130deg, #483321, #1d1710);
-}
+.tournament-banner.green { background: linear-gradient(130deg, #263c22, #111c17); }
+.tournament-banner.purple { background: linear-gradient(130deg, #302347, #191323); }
+.tournament-banner.orange { background: linear-gradient(130deg, #483321, #1d1710); }
 
 .banner-top {
   display: flex;
@@ -435,8 +409,7 @@ button {
   z-index: 2;
 }
 
-.game-tag,
-.status-tag {
+.game-tag, .status-tag {
   font-size: 9px;
   font-weight: 800;
   letter-spacing: 1px;
@@ -444,15 +417,8 @@ button {
   border-radius: 3px;
 }
 
-.game-tag {
-  background: rgba(0,0,0,0.4);
-  color: white;
-}
-
-.status-tag {
-  background: rgba(181,255,54,0.12);
-  color: var(--green);
-}
+.game-tag { background: rgba(0,0,0,0.4); color: white; }
+.status-tag { background: rgba(181,255,54,0.12); color: var(--green); }
 
 .banner-content {
   position: relative;
@@ -487,9 +453,7 @@ button {
   color: rgba(255,255,255,0.06);
 }
 
-.tournament-details {
-  padding: 22px;
-}
+.tournament-details { padding: 22px; }
 
 .prize-entry {
   display: flex;
@@ -498,30 +462,17 @@ button {
   border-bottom: 1px solid var(--border);
 }
 
-.prize-entry div,
-.slots-text {
+.prize-entry div, .slots-text {
   display: flex;
   flex-direction: column;
   gap: 7px;
 }
 
-.detail-label {
-  color: var(--muted);
-  font-size: 10px;
-}
-
-.prize-value {
-  color: var(--green);
-  font-size: 23px;
-}
-
-.entry-price {
-  text-align: right;
-}
-
-.entry-price strong {
-  font-size: 18px;
-}
+.detail-label { color: var(--muted); font-size: 10px; }
+.prize-value { color: var(--green); font-size: 23px; }
+.entry-price { text-align: right; }
+.entry-price strong { font-size: 18px; }
+.free-entry { color: var(--green); }
 
 .tournament-date {
   display: flex;
@@ -540,9 +491,7 @@ button {
   margin-bottom: 10px;
 }
 
-.slots-text strong {
-  color: white;
-}
+.slots-text strong { color: white; }
 
 .progress-track {
   height: 5px;
@@ -571,25 +520,20 @@ button {
   transition: 0.2s;
 }
 
-.join-button:hover {
-  background: #d0ff83;
-  transform: translateY(-2px);
-}
+.join-button:hover { background: #d0ff83; }
 
-/* HOW IT WORKS */
+/* ============================================================
+   HOW IT WORKS
+   ============================================================ */
 
-.how-section {
-  background: #080a0b;
-}
+.how-section { background: #080a0b; }
 
 .center-heading {
   text-align: center;
   margin-bottom: 55px;
 }
 
-.center-heading h2 {
-  font-size: 50px;
-}
+.center-heading h2 { font-size: 50px; }
 
 .features-grid {
   display: grid;
@@ -622,184 +566,24 @@ button {
   color: rgba(255,255,255,0.07);
 }
 
-.feature-icon {
-  font-size: 30px;
-  margin-bottom: 24px;
-}
+.feature-icon { font-size: 30px; margin-bottom: 24px; }
+.feature-card h3 { font-size: 15px; margin-bottom: 12px; }
+.feature-card p { font-size: 11px; color: var(--muted); line-height: 1.8; }
 
-.feature-card h3 {
-  font-size: 15px;
-  margin-bottom: 12px;
-}
-
-.feature-card p {
-  font-size: 11px;
-  color: var(--muted);
-  line-height: 1.8;
-}
-
-/* CTA */
+/* ============================================================
+   CTA & AUTH
+   ============================================================ */
 
 .cta-section {
   padding: 90px 25px;
   text-align: center;
-  background:
-    radial-gradient(ellipse at center, rgba(181,255,54,0.09), transparent 65%),
-    #101512;
+  background: radial-gradient(ellipse at center, rgba(181,255,54,0.09), transparent 65%), #101512;
   border-top: 1px solid var(--border);
   border-bottom: 1px solid var(--border);
 }
 
-.cta-section h2 {
-  font-size: 65px;
-  margin: 17px 0;
-}
-
-.cta-section p {
-  color: var(--muted);
-  font-size: 13px;
-  line-height: 1.8;
-  margin-bottom: 25px;
-}
-
-/* RESPONSIVE */
-
-@media (max-width: 1000px) {
-  .hero-container {
-    grid-template-columns: 1fr 0.8fr;
-  }
-
-  .hero-game-card {
-    width: 280px;
-    height: 340px;
-  }
-
-  .floating-one {
-    right: -5px;
-  }
-
-  .tournament-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .features-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (max-width: 700px) {
-  .hero-container {
-    grid-template-columns: 1fr;
-    padding: 75px 20px 30px;
-  }
-
-  .hero h1 {
-    font-size: clamp(58px, 13vw, 78px);
-  }
-
-  .hero-content > p {
-    font-size: 12px;
-  }
-
-  .hero-visual {
-    min-height: 390px;
-    margin-top: 35px;
-  }
-
-  .hero-game-card {
-    width: 265px;
-    height: 325px;
-  }
-
-  .game-symbol {
-    font-size: 105px;
-  }
-
-  .floating-one {
-    right: 0;
-    top: 45px;
-  }
-
-  .floating-two {
-    left: 0;
-    bottom: 35px;
-  }
-
-  .hero-stats {
-    gap: 27px;
-    margin-top: 38px;
-  }
-
-  .hero-bottom {
-    padding: 0 20px 20px;
-    font-size: 8px;
-  }
-
-  .section {
-    padding: 75px 0;
-  }
-
-  .section-container {
-    padding: 0 17px;
-  }
-
-  .section-heading {
-    align-items: start;
-    flex-direction: column;
-    margin-bottom: 30px;
-  }
-
-  .section-heading h2,
-  .center-heading h2 {
-    font-size: 39px;
-  }
-
-  .tournament-grid {
-    grid-template-columns: 1fr;
-    gap: 18px;
-  }
-
-  .tournament-banner {
-    min-height: 185px;
-  }
-
-  .features-grid {
-    grid-template-columns: 1fr;
-    gap: 13px;
-  }
-
-  .feature-card {
-    min-height: 190px;
-  }
-
-  .center-heading {
-    margin-bottom: 35px;
-  }
-
-  .cta-section {
-    padding: 75px 20px;
-  }
-
-  .cta-section h2 {
-    font-size: 52px;
-  }
-}
-
-@media (max-width: 380px) {
-  .hero h1 {
-    font-size: 53px;
-  }
-
-  .hero-stats {
-    gap: 17px;
-  }
-
-  .tournament-date {
-    font-size: 9px;
-  }
-}
-
-/* AUTH */
+.cta-section h2 { font-size: 65px; margin: 17px 0; }
+.cta-section p { color: var(--muted); font-size: 13px; line-height: 1.8; margin-bottom: 25px; }
 
 .auth-page {
   min-height: calc(100vh - 82px);
@@ -822,26 +606,9 @@ button {
   gap: 18px;
 }
 
-.auth-form h1 {
-  font-family: "Barlow Condensed", sans-serif;
-  font-size: 36px;
-  font-weight: 900;
-}
-
-.auth-subtitle {
-  color: var(--muted);
-  font-size: 13px;
-  margin-top: -10px;
-}
-
-.auth-error {
-  background: rgba(255, 80, 80, 0.1);
-  border: 1px solid rgba(255, 80, 80, 0.3);
-  color: #ff6b6b;
-  padding: 10px 12px;
-  border-radius: 4px;
-  font-size: 12px;
-}
+.auth-form h1 { font-family: "Barlow Condensed", sans-serif; font-size: 36px; font-weight: 900; }
+.auth-subtitle { color: var(--muted); font-size: 13px; margin-top: -10px; }
+.auth-error { background: rgba(255, 80, 80, 0.1); border: 1px solid rgba(255, 80, 80, 0.3); color: #ff6b6b; padding: 10px 12px; border-radius: 4px; font-size: 12px; }
 
 .auth-form label {
   display: flex;
@@ -864,82 +631,30 @@ button {
   transition: border-color 0.2s;
 }
 
-.auth-form input:focus {
-  border-color: var(--green);
-}
+.auth-form input:focus { border-color: var(--green); }
+.auth-form .primary-button { margin-top: 6px; width: 100%; border: none; cursor: pointer; }
+.auth-form .primary-button:disabled { opacity: 0.6; cursor: not-allowed; }
+.auth-switch { text-align: center; font-size: 12px; color: var(--muted); }
+.auth-switch a { color: var(--green); font-weight: 700; }
 
-.auth-form .primary-button {
-  margin-top: 6px;
-  width: 100%;
-  border: none;
-  cursor: pointer;
-}
+/* ============================================================
+   GUIDES & ARTICLES
+   ============================================================ */
 
-.auth-form .primary-button:disabled {
-  opacity: 0.6;
-  cursor: not-allowed;
-}
-
-.auth-switch {
-  text-align: center;
-  font-size: 12px;
-  color: var(--muted);
-}
-
-.auth-switch a {
-  color: var(--green);
-  font-weight: 700;
-}
-/* app/guides/guides.css */
-
-/* --- COMMON --- */
 .guides-page, .article-page {
   background: #080a0b;
   min-height: calc(100vh - 82px);
   padding: 80px 20px 100px;
 }
 
-.guides-container {
-  max-width: 1200px;
-  margin: auto;
-}
+.guides-container { max-width: 1200px; margin: auto; }
+.guides-header { text-align: center; margin-bottom: 60px; }
+.guides-header h1 { font-family: "Barlow Condensed", sans-serif; font-size: clamp(42px, 7vw, 68px); font-weight: 900; line-height: 0.95; margin: 12px 0 16px; }
+.guides-header h1 span { color: var(--green); }
+.guides-header p { color: var(--muted); font-size: 14px; line-height: 1.7; max-width: 600px; margin: auto; }
 
-.guides-header {
-  text-align: center;
-  margin-bottom: 60px;
-}
-
-.guides-header h1 {
-  font-family: "Barlow Condensed", sans-serif;
-  font-size: clamp(42px, 7vw, 68px);
-  font-weight: 900;
-  line-height: 0.95;
-  margin: 12px 0 16px;
-}
-
-.guides-header h1 span {
-  color: var(--green);
-}
-
-.guides-header p {
-  color: var(--muted);
-  font-size: 14px;
-  line-height: 1.7;
-  max-width: 600px;
-  margin: auto;
-}
-
-/* --- GUIDE GRID & CARDS --- */
-.guides-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 24px;
-}
-
-.home-grid {
-  grid-template-columns: repeat(4, 1fr);
-  gap: 16px;
-}
+.guides-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+.home-grid { grid-template-columns: repeat(4, 1fr); gap: 16px; }
 
 .guide-card {
   display: flex;
@@ -953,104 +668,23 @@ button {
   transition: 0.2s;
 }
 
-.guide-card:hover {
-  border-color: rgba(181, 255, 54, 0.4);
-  transform: translateY(-4px);
-}
+.guide-card:hover { border-color: rgba(181, 255, 54, 0.4); transform: translateY(-4px); }
+.guide-card-header { margin-bottom: 16px; }
+.guide-category { font-size: 9px; font-weight: 800; letter-spacing: 1.5px; text-transform: uppercase; color: var(--green); background: rgba(181, 255, 54, 0.1); padding: 4px 8px; border-radius: 3px; }
+.guide-card-body { flex: 1; }
+.guide-card-body h3 { font-family: "Barlow Condensed", sans-serif; font-size: 22px; font-weight: 800; line-height: 1.2; margin-bottom: 12px; color: var(--text); }
+.guide-card-body p { color: var(--muted); font-size: 13px; line-height: 1.6; margin-bottom: 24px; }
+.guide-card-footer { display: flex; justify-content: space-between; align-items: center; border-top: 1px solid var(--border); padding-top: 16px; font-size: 11px; color: #69736c; font-weight: 600; }
+.guide-read-time { color: var(--green); }
 
-.guide-card-header {
-  margin-bottom: 16px;
-}
+.article-container { max-width: 760px; margin: auto; }
+.article-back { display: inline-block; color: var(--muted); font-size: 12px; font-weight: 700; text-decoration: none; margin-bottom: 40px; transition: color 0.2s; }
+.article-back:hover { color: var(--green); }
+.article-header { margin-bottom: 40px; padding-bottom: 40px; border-bottom: 1px solid var(--border); }
+.article-header h1 { font-family: "Barlow Condensed", sans-serif; font-size: clamp(36px, 6vw, 56px); font-weight: 900; line-height: 1.05; margin: 16px 0; }
+.article-meta { display: flex; gap: 12px; color: var(--muted); font-size: 12px; font-weight: 600; }
+/* ... (Your previous CSS ends at .article-meta) ... */
 
-.guide-category {
-  font-size: 9px;
-  font-weight: 800;
-  letter-spacing: 1.5px;
-  text-transform: uppercase;
-  color: var(--green);
-  background: rgba(181, 255, 54, 0.1);
-  padding: 4px 8px;
-  border-radius: 3px;
-}
-
-.guide-card-body {
-  flex: 1;
-}
-
-.guide-card-body h3 {
-  font-family: "Barlow Condensed", sans-serif;
-  font-size: 22px;
-  font-weight: 800;
-  line-height: 1.2;
-  margin-bottom: 12px;
-  color: var(--text);
-}
-
-.guide-card-body p {
-  color: var(--muted);
-  font-size: 13px;
-  line-height: 1.6;
-  margin-bottom: 24px;
-}
-
-.guide-card-footer {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  border-top: 1px solid var(--border);
-  padding-top: 16px;
-  font-size: 11px;
-  color: #69736c;
-  font-weight: 600;
-}
-
-.guide-read-time {
-  color: var(--green);
-}
-
-/* --- ARTICLE PAGE --- */
-.article-container {
-  max-width: 760px;
-  margin: auto;
-}
-
-.article-back {
-  display: inline-block;
-  color: var(--muted);
-  font-size: 12px;
-  font-weight: 700;
-  text-decoration: none;
-  margin-bottom: 40px;
-  transition: color 0.2s;
-}
-
-.article-back:hover {
-  color: var(--green);
-}
-
-.article-header {
-  margin-bottom: 40px;
-  padding-bottom: 40px;
-  border-bottom: 1px solid var(--border);
-}
-
-.article-header h1 {
-  font-family: "Barlow Condensed", sans-serif;
-  font-size: clamp(36px, 6vw, 56px);
-  font-weight: 900;
-  line-height: 1.05;
-  margin: 16px 0;
-}
-
-.article-meta {
-  display: flex;
-  gap: 12px;
-  color: var(--muted);
-  font-size: 12px;
-  font-weight: 600;
-}
-
-/* Typography for the article content */
 .article-content {
   color: #c8d0cb;
   font-size: 16px;
@@ -1065,278 +699,221 @@ button {
   margin: 40px 0 16px;
 }
 
-.article-content p {
-  margin-bottom: 24px;
+.article-content p { margin-bottom: 24px; }
+.article-content ul { margin-bottom: 24px; padding-left: 20px; }
+.article-content li { margin-bottom: 10px; }
+.article-content strong { color: var(--green); font-weight: 700; }
+
+.article-divider { height: 1px; background: var(--border); margin: 60px 0; }
+.related-articles h2 { font-family: "Barlow Condensed", sans-serif; font-size: 28px; font-weight: 900; margin-bottom: 24px; }
+
+.related-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+.related-card { background: var(--surface); padding: 20px; border: 1px solid var(--border); border-radius: 6px; text-decoration: none; transition: 0.2s; }
+.related-card:hover { border-color: var(--green); }
+.related-card span { font-size: 9px; font-weight: 800; color: var(--green); text-transform: uppercase; letter-spacing: 1px; }
+.related-card h3 { font-size: 16px; font-weight: 700; color: var(--text); margin-top: 8px; line-height: 1.3; }
+
+/* ============================================================
+   HOMEPAGE ORGANIZER PROMO
+   ============================================================ */
+
+.org-promo-section {
+  background: #080a0b;
+  padding: 100px 0;
+  border-top: 1px solid var(--border);
 }
 
-.article-content ul {
-  margin-bottom: 24px;
-  padding-left: 20px;
-}
-
-.article-content li {
-  margin-bottom: 10px;
-}
-
-.article-content strong {
-  color: var(--green);
-  font-weight: 700;
-}
-
-/* --- RELATED ARTICLES --- */
-.article-divider {
-  height: 1px;
-  background: var(--border);
-  margin: 60px 0;
-}
-
-.related-articles h2 {
-  font-family: "Barlow Condensed", sans-serif;
-  font-size: 28px;
-  font-weight: 900;
-  margin-bottom: 24px;
-}
-
-.related-grid {
+.org-promo-card {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 16px;
+  grid-template-columns: 1fr 0.8fr;
+  gap: 40px;
+  align-items: center;
+  background: 
+    radial-gradient(ellipse at left, rgba(181, 255, 54, 0.05), transparent 50%),
+    var(--surface);
+  border: 1px solid rgba(181, 255, 54, 0.2);
+  border-radius: 16px;
+  padding: 60px;
+  position: relative;
+  overflow: hidden;
 }
 
-.related-card {
-  background: var(--surface);
-  padding: 20px;
-  border: 1px solid var(--border);
-  border-radius: 6px;
-  text-decoration: none;
-  transition: 0.2s;
-}
-
-.related-card:hover {
-  border-color: var(--green);
-}
-
-.related-card span {
-  font-size: 9px;
-  font-weight: 800;
-  color: var(--green);
-  text-transform: uppercase;
-  letter-spacing: 1px;
-}
-
-.related-card h3 {
-  font-size: 16px;
-  font-weight: 700;
+.org-promo-content h2 {
+  font-family: "Barlow Condensed", sans-serif;
+  font-size: clamp(36px, 5vw, 56px);
+  font-weight: 900;
+  line-height: 1;
   color: var(--text);
-  margin-top: 8px;
-  line-height: 1.3;
+  margin: 12px 0 20px;
 }
 
-/* --- RESPONSIVE --- */
+.org-promo-content h2 span { color: var(--green); }
+
+.org-promo-content p {
+  color: #a3aaa5;
+  font-size: 15px;
+  line-height: 1.7;
+  margin-bottom: 24px;
+  max-width: 500px;
+}
+
+.org-promo-content p strong { color: var(--green); font-weight: 700; }
+
+.org-promo-features {
+  display: flex;
+  gap: 24px;
+  flex-wrap: wrap;
+  margin-bottom: 32px;
+}
+
+.org-promo-features div {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.org-promo-features span { color: var(--green); font-weight: 900; }
+
+.org-promo-actions {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.org-promo-price { color: var(--muted); font-size: 13px; font-weight: 600; }
+
+/* ─── MOCKUP VISUAL ─────────────────────────────────────── */
+
+.org-promo-visual {
+  display: flex;
+  justify-content: center;
+  perspective: 1000px;
+}
+
+.org-visual-card {
+  background: #0b0f0e;
+  border: 1px solid rgba(181, 255, 54, 0.3);
+  border-radius: 12px;
+  width: 100%;
+  max-width: 320px;
+  box-shadow: 20px 20px 60px rgba(0, 0, 0, 0.6), 0 0 40px rgba(181, 255, 54, 0.1);
+  transform: rotateY(-10deg) rotateX(5deg);
+  transition: transform 0.4s ease;
+}
+
+.org-visual-card:hover {
+  transform: rotateY(0deg) rotateX(0deg) translateY(-5px);
+}
+
+.org-visual-header {
+  padding: 12px 16px;
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  gap: 6px;
+}
+
+.org-visual-header .dot { width: 8px; height: 8px; border-radius: 50%; background: #333; }
+.org-visual-header .dot:first-child { background: #ff5f56; }
+.org-visual-header .dot:nth-child(2) { background: #ffbd2e; }
+.org-visual-header .dot:nth-child(3) { background: #27c93f; }
+
+.org-visual-body { padding: 24px; text-align: center; }
+.org-visual-icon { font-size: 40px; margin-bottom: 12px; }
+.org-visual-body h3 { font-size: 14px; font-weight: 700; color: var(--text); margin-bottom: 16px; }
+
+.org-visual-bar {
+  height: 6px;
+  background: #222;
+  border-radius: 3px;
+  margin-bottom: 16px;
+  overflow: hidden;
+}
+
+.org-visual-fill { height: 100%; width: 75%; background: var(--green); border-radius: 3px; }
+
+.org-visual-body p {
+  font-family: ui-monospace, monospace;
+  font-size: 12px;
+  color: var(--muted);
+  margin-bottom: 8px;
+  background: #050607;
+  padding: 8px;
+  border-radius: 4px;
+  border: 1px solid var(--border);
+}
+
+/* ============================================================
+   RESPONSIVE DESIGN
+   ============================================================ */
+
 @media (max-width: 1000px) {
+  .hero-container { grid-template-columns: 1fr 0.8fr; }
+  .hero-game-card { width: 280px; height: 340px; }
+  .floating-one { right: -5px; }
+  .tournament-grid { grid-template-columns: repeat(2, 1fr); }
+  .features-grid { grid-template-columns: repeat(2, 1fr); }
   .guides-grid { grid-template-columns: repeat(2, 1fr); }
   .home-grid { grid-template-columns: repeat(2, 1fr); }
   .related-grid { grid-template-columns: repeat(2, 1fr); }
 }
 
+@media (max-width: 900px) {
+  .org-promo-card {
+    grid-template-columns: 1fr;
+    padding: 40px;
+    text-align: center;
+  }
+  .org-promo-content p { margin: 0 auto 24px; }
+  .org-promo-features { justify-content: center; }
+  .org-promo-actions { justify-content: center; }
+  .org-promo-visual { display: none; }
+}
+
 @media (max-width: 700px) {
+  .hero-container { grid-template-columns: 1fr; padding: 75px 20px 30px; }
+  .hero h1 { font-size: clamp(58px, 13vw, 78px); }
+  .hero-content > p { font-size: 12px; }
+  .hero-visual { min-height: 390px; margin-top: 35px; }
+  .hero-game-card { width: 265px; height: 325px; }
+  .game-symbol { font-size: 105px; }
+  .floating-one { right: 0; top: 45px; }
+  .floating-two { left: 0; bottom: 35px; }
+  .hero-stats { gap: 27px; margin-top: 38px; }
+  .hero-bottom { padding: 0 20px 20px; font-size: 8px; }
+
+  .section { padding: 75px 0; }
+  .section-container { padding: 0 17px; }
+  
+  .section-heading {
+    align-items: start;
+    flex-direction: column;
+    margin-bottom: 30px;
+  }
+  .section-heading h2, .center-heading h2 { font-size: 39px; }
+  
+  .tournament-grid { grid-template-columns: 1fr; gap: 18px; }
+  .tournament-banner { min-height: 185px; }
+  
+  .features-grid { grid-template-columns: 1fr; gap: 13px; }
+  .feature-card { min-height: 190px; }
+  
+  .center-heading { margin-bottom: 35px; }
+  .cta-section { padding: 75px 20px; }
+  .cta-section h2 { font-size: 52px; }
+
   .guides-page, .article-page { padding: 40px 16px 80px; }
   .guides-grid { grid-template-columns: 1fr; }
   .home-grid { grid-template-columns: 1fr; }
   .related-grid { grid-template-columns: 1fr; }
   .article-content { font-size: 15px; }
 }
-/* ============================================================
-   HOMEPAGE ORGANIZER PROMO
-   ============================================================ */
 
-   .org-promo-section {
-    background: #080a0b;
-    padding: 100px 0;
-    border-top: 1px solid var(--border);
-  }
-  
-  .org-promo-card {
-    display: grid;
-    grid-template-columns: 1fr 0.8fr;
-    gap: 40px;
-    align-items: center;
-    background: 
-      radial-gradient(ellipse at left, rgba(181, 255, 54, 0.05), transparent 50%),
-      var(--surface);
-    border: 1px solid rgba(181, 255, 54, 0.2);
-    border-radius: 16px;
-    padding: 60px;
-    position: relative;
-    overflow: hidden;
-  }
-  
-  .org-promo-content h2 {
-    font-family: "Barlow Condensed", sans-serif;
-    font-size: clamp(36px, 5vw, 56px);
-    font-weight: 900;
-    line-height: 1;
-    color: var(--text);
-    margin: 12px 0 20px;
-  }
-  
-  .org-promo-content h2 span {
-    color: var(--green);
-  }
-  
-  .org-promo-content p {
-    color: #a3aaa5;
-    font-size: 15px;
-    line-height: 1.7;
-    margin-bottom: 24px;
-    max-width: 500px;
-  }
-  
-  .org-promo-content p strong {
-    color: var(--green);
-    font-weight: 700;
-  }
-  
-  .org-promo-features {
-    display: flex;
-    gap: 24px;
-    flex-wrap: wrap;
-    margin-bottom: 32px;
-  }
-  
-  .org-promo-features div {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    font-size: 13px;
-    font-weight: 600;
-    color: var(--text);
-  }
-  
-  .org-promo-features span {
-    color: var(--green);
-    font-weight: 900;
-  }
-  
-  .org-promo-actions {
-    display: flex;
-    align-items: center;
-    gap: 20px;
-    flex-wrap: wrap;
-  }
-  
-  .org-promo-price {
-    color: var(--muted);
-    font-size: 13px;
-    font-weight: 600;
-  }
-  
-  /* ─── MOCKUP VISUAL ─────────────────────────────────────── */
-  
-  .org-promo-visual {
-    display: flex;
-    justify-content: center;
-    perspective: 1000px;
-  }
-  
-  .org-visual-card {
-    background: #0b0f0e;
-    border: 1px solid rgba(181, 255, 54, 0.3);
-    border-radius: 12px;
-    width: 100%;
-    max-width: 320px;
-    box-shadow: 20px 20px 60px rgba(0, 0, 0, 0.6), 0 0 40px rgba(181, 255, 54, 0.1);
-    transform: rotateY(-10deg) rotateX(5deg);
-    transition: transform 0.4s ease;
-  }
-  
-  .org-visual-card:hover {
-    transform: rotateY(0deg) rotateX(0deg) translateY(-5px);
-  }
-  
-  .org-visual-header {
-    padding: 12px 16px;
-    border-bottom: 1px solid var(--border);
-    display: flex;
-    gap: 6px;
-  }
-  
-  .org-visual-header .dot {
-    width: 8px;
-    height: 8px;
-    border-radius: 50%;
-    background: #333;
-  }
-  
-  .org-visual-header .dot:first-child { background: #ff5f56; }
-  .org-visual-header .dot:nth-child(2) { background: #ffbd2e; }
-  .org-visual-header .dot:nth-child(3) { background: #27c93f; }
-  
-  .org-visual-body {
-    padding: 24px;
-    text-align: center;
-  }
-  
-  .org-visual-icon {
-    font-size: 40px;
-    margin-bottom: 12px;
-  }
-  
-  .org-visual-body h3 {
-    font-size: 14px;
-    font-weight: 700;
-    color: var(--text);
-    margin-bottom: 16px;
-  }
-  
-  .org-visual-bar {
-    height: 6px;
-    background: #222;
-    border-radius: 3px;
-    margin-bottom: 16px;
-    overflow: hidden;
-  }
-  
-  .org-visual-fill {
-    height: 100%;
-    width: 75%;
-    background: var(--green);
-    border-radius: 3px;
-  }
-  
-  .org-visual-body p {
-    font-family: ui-monospace, monospace;
-    font-size: 12px;
-    color: var(--muted);
-    margin-bottom: 8px;
-    background: #050607;
-    padding: 8px;
-    border-radius: 4px;
-    border: 1px solid var(--border);
-  }
-  
-  /* ─── RESPONSIVE ────────────────────────────────────────── */
-  
-  @media (max-width: 900px) {
-    .org-promo-card {
-      grid-template-columns: 1fr;
-      padding: 40px;
-      text-align: center;
-    }
-  
-    .org-promo-content p {
-      margin: 0 auto 24px;
-    }
-  
-    .org-promo-features {
-      justify-content: center;
-    }
-  
-    .org-promo-actions {
-      justify-content: center;
-    }
-  
-    .org-promo-visual {
-      display: none; /* Hide mockup on smaller screens to keep it clean */
-    }
-  }
+@media (max-width: 380px) {
+  .hero h1 { font-size: 53px; }
+  .hero-stats { gap: 17px; }
+  .tournament-date { font-size: 9px; }
+}

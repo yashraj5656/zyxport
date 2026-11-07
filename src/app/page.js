@@ -1,3 +1,4 @@
+// app/page.jsx
 import Link from "next/link";
 import dbConnect from "@/lib/mongodb";
 import Tournament from "@/models/Tournament";
@@ -293,9 +294,8 @@ export default async function Home() {
         </div>
       </section>
 
-
-            {/* ═══ BECOME AN ORGANIZER SECTION ═══ */}
-            <section className="section org-promo-section">
+      {/* BECOME AN ORGANIZER SECTION */}
+      <section className="section org-promo-section">
         <div className="section-container">
           <div className="org-promo-card">
             <div className="org-promo-content">
@@ -304,13 +304,13 @@ export default async function Home() {
                 WANT TO HOST YOUR OWN <span>TOURNAMENT?</span>
               </h2>
               <p>
-                Skip the spreadsheets and manual room IDs. Use ZYXPORT's infrastructure to host fair, competitive BGMI matches. Get unlimited tournaments, secure room delivery, and player management for just <strong>₹799/month</strong>.
+                Skip the spreadsheets and manual room IDs. Use ZYXPORT&apos;s infrastructure to host fair, competitive BGMI matches. Get unlimited tournaments, secure room delivery, and player management for just <strong>₹799/month</strong>.
               </p>
               
               <div className="org-promo-features">
                 <div><span>✓</span> Unlimited Tournaments</div>
                 <div><span>✓</span> Secure Room IDs</div>
-                <div><span>✓</span> Custom Branding</div>
+                <div><span>✓</span> Manage player registrations</div>
               </div>
 
               <div className="org-promo-actions">
@@ -341,9 +341,8 @@ export default async function Home() {
         </div>
       </section>
 
-
-           {/* GUIDES & NEWS */}
-           <section className="section how-section" id="guides">
+      {/* GUIDES & NEWS */}
+      <section className="section how-section" id="guides">
         <div className="section-container">
           <div className="section-heading">
             <div>
@@ -361,7 +360,6 @@ export default async function Home() {
           </div>
 
           <div className="guides-grid home-grid">
-            {/* Show only the first 4 articles */}
             {guides.slice(0, 4).map((guide) => (
               <GuideCard key={guide.slug} guide={guide} />
             ))}

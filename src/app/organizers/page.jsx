@@ -53,10 +53,10 @@ export default async function OrganizersPage() {
               </div>
               <ul className="org-price-features">
                 <li> <strong>Unlimited</strong> tournaments per month</li>
+                <li> Manage player registrations </li>
                 <li> Secure room ID distribution</li>
                 <li> Up to 100 player slots per match</li>
-                <li> Custom sponsor branding</li>
-                <li> Priority support </li>
+                <li> Publish match results </li>
               </ul>
 
               {/* 👇 The dynamic checkout button */}

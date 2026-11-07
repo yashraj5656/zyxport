@@ -4,6 +4,7 @@ import dbConnect from "@/lib/mongodb";
 import Tournament from "@/models/Tournament";
 import { guides } from "@/lib/guidesData";
 import GuideCard from "@/components/GuideCard";
+import { getCurrentUser } from "@/lib/getCurrentUser";
 
 export const dynamic = "force-dynamic";
 
@@ -160,6 +161,7 @@ function TournamentCard({ tournament }) {
 
 export default async function Home() {
   const tournaments = await getUpcomingTournaments();
+  const user = await getCurrentUser();
 
   return (
     <main>
@@ -190,8 +192,8 @@ export default async function Home() {
                 Explore Tournaments <span>→</span>
               </Link>
 
-              <Link href="#how-it-works" className="secondary-button">
-                How It Works
+              <Link href="#organizers" className="secondary-button">
+                Host tournament
               </Link>
             </div>
 
@@ -295,30 +297,59 @@ export default async function Home() {
       </section>
 
       {/* BECOME AN ORGANIZER SECTION */}
-      <section className="section org-promo-section">
+      <section className="section org-promo-section" id="organizers">
         <div className="section-container">
           <div className="org-promo-card">
             <div className="org-promo-content">
-              <span className="eyebrow">FOR TOURNAMENT ORGANIZERS</span>
-              <h2>
-                WANT TO HOST YOUR OWN <span>TOURNAMENT?</span>
-              </h2>
-              <p>
-                Skip the spreadsheets and manual room IDs. Use ZYXPORT&apos;s infrastructure to host fair, competitive BGMI matches. Get unlimited tournaments, secure room delivery, and player management for just <strong>₹799/month</strong>.
-              </p>
-              
-              <div className="org-promo-features">
-                <div><span>✓</span> Unlimited Tournaments</div>
-                <div><span>✓</span> Secure Room IDs</div>
-                <div><span>✓</span> Manage player registrations</div>
-              </div>
+              {user?.isOrganizer ? (
+                /* 👇 UI FOR EXISTING ORGANIZERS */
+                <>
+                  <span className="eyebrow" style={{ color: "var(--green)" }}>
+                    WELCOME BACK, ORGANIZER
+                  </span>
+                  <h2>
+                    READY TO HOST YOUR NEXT <span>TOURNAMENT?</span>
+                  </h2>
+                  <p>
+                    Your organizer dashboard is ready. Create unlimited tournaments, distribute secure room IDs, and manage player registrations effortlessly.
+                  </p>
+                  
+                  <div className="org-promo-features">
+                    <div><span>✓</span> Dashboard Active</div>
+                    <div><span>✓</span> Unlimited Events</div>
+                  </div>
 
-              <div className="org-promo-actions">
-                <Link href="/organizers" className="primary-button">
-                  Become an Organizer <span>→</span>
-                </Link>
-                <span className="org-promo-price">Starting at ₹799/mo</span>
-              </div>
+                  <div className="org-promo-actions">
+                    <Link href="/organizer" className="primary-button">
+                      Go to Dashboard <span>→</span>
+                    </Link>
+                  </div>
+                </>
+              ) : (
+                /* 👇 UI FOR NON-ORGANIZERS (DEFAULT) */
+                <>
+                  <span className="eyebrow">FOR TOURNAMENT ORGANIZERS</span>
+                  <h2>
+                    WANT TO HOST YOUR OWN <span>TOURNAMENT?</span>
+                  </h2>
+                  <p>
+                    Skip the spreadsheets and manual room IDs. Use ZYXPORT&apos;s infrastructure to host fair, competitive BGMI matches. Get unlimited tournaments, secure room delivery, and player management for just <strong>₹799/month</strong>.
+                  </p>
+                  
+                  <div className="org-promo-features">
+                    <div><span>✓</span> Unlimited Tournaments</div>
+                    <div><span>✓</span> Secure Room IDs</div>
+                    <div><span>✓</span> Manage player registrations</div>
+                  </div>
+
+                  <div className="org-promo-actions">
+                    <Link href="/organizers" className="primary-button">
+                      Become an Organizer <span>→</span>
+                    </Link>
+                    <span className="org-promo-price">Starting at ₹799/mo</span>
+                  </div>
+                </>
+              )}
             </div>
 
             <div className="org-promo-visual">

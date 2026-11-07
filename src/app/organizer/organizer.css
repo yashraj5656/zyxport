@@ -703,3 +703,49 @@
       padding: 12px;
     }
   }
+  /* Add this to your existing buttons block */
+.admin-view-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 14px;
+  border-radius: 5px;
+  font-size: 11px;
+  font-weight: 700;
+  cursor: pointer;
+  font-family: inherit;
+  transition: 0.15s;
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--text);
+  border: 1px solid var(--border);
+  text-decoration: none;
+}
+
+.admin-view-btn:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: var(--text);
+}
+@media (max-width: 768px) {
+  /* ... existing mobile table css ... */
+
+  .admin-table td.org-mobile-actions {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* 2x2 grid */
+    gap: 8px;
+    padding-top: 16px;
+    border-top: 1px dashed var(--border);
+  }
+  .admin-table td.org-mobile-actions::before {
+    display: none;
+  }
+
+  /* Make all 3 buttons share the width equally */
+  .admin-table td.org-mobile-actions button,
+  .admin-table td.org-mobile-actions .admin-view-btn {
+    width: 100%;
+    justify-content: center;
+    text-align: center;
+    padding: 10px 4px;
+    font-size: 11px;
+  }
+}

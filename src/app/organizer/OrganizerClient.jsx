@@ -3,6 +3,7 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import ShareButton from "./ShareButton";
 
 const MODES = ["SQUAD TPP", "SOLO TPP", "DUO TPP", "SQUAD FPP", "SOLO FPP"];
 const MAPS = ["Erangel", "Miramar", "Sanhok", "Vikendi", "Livik"];
@@ -324,6 +325,15 @@ export default function OrganizerClient() {
       </td>
       <td data-label="Start Time">{new Date(t.startTime).toLocaleString("en-IN")}</td>
       <td className="admin-actions-cell org-mobile-actions">
+      <Link 
+    href={`/tournaments/${t._id}`} 
+    target="_blank" 
+    className="admin-view-btn"
+    title="View Public Page"
+  >
+    View
+  </Link>
+  <ShareButton title={t} />
         <button type="button" className="admin-edit-btn" onClick={() => startEdit(t)}>Edit</button>
         <button type="button" className="admin-delete-btn" onClick={() => handleDelete(t._id)}>Delete</button>
       </td>

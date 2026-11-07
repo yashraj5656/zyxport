@@ -7,6 +7,7 @@ import Registration from "@/models/Registration";
 import { getAuthUser } from "@/lib/auth";
 import TournamentDetailClient from "./TournamentDetailClient";
 import "./detail.css";
+import ShareButton from "./ShareButton";
 
 export const dynamic = "force-dynamic";
 
@@ -191,6 +192,10 @@ export default async function TournamentDetailPage({ params }) {
                 </span>
               ))}
             </h1>
+
+            <div style={{ marginTop: "10px" }}>
+                <ShareButton title={t.name} />
+              </div>
 
             <p className="brand-hero-subtitle">{BRAND.subTagline}</p>
 
